@@ -4,17 +4,13 @@
         <div class="row">
             <div class="column">
                 <p>
-                    <label for="name">Dirección</label>
-                    <input type="text" name="name" #name="ngModel" [(ngModel)]="project.name" required>
-                    <span class="form_error" *ngIf="name.touched && !name.valid"><strong>La dirección es obligatoria</strong></span>
+                    <label for="name">Nombre</label>
+                    <input type="text" name="name" #name="ngModel" [(ngModel)]="restaurant.name" required>
+                    <span class="form_error" *ngIf="name.touched && !name.valid"><strong>El nombre es obligatorio</strong></span>
                 </p>
             </div>
             <div class="column">
-                <p>
-                    <label for="name">Dirección</label>
-                    <input type="text" name="name" #name="ngModel" [(ngModel)]="project.name" required>
-                    <span class="form_error" *ngIf="name.touched && !name.valid"><strong>La dirección es obligatoria</strong></span>
-                </p>
+                
             </div>
         </div>
         <input type="submit" value="Enviar" [disabled]="!projectForm.form.valid">
