@@ -9,6 +9,10 @@
 	src: url("./assets/css/fonts/finger.ttf");
 }
 
+@font-face{
+	font-family: "United Sans light";
+	src: url("./assets/css/fonts/UnitedSansReg-Light.otf");
+}
 /*Generales*/
 
 *{
@@ -19,7 +23,7 @@
 body{
 	font-family: "yanone", Arial, Helvetica;
 	font-size: 20px;
-	background: url("./assets/img/pattern.png");
+	background: #181818;
 	background-attachment: fixed;
 }
 
@@ -36,27 +40,33 @@ header{
 	height: 90px;
 	position: fixed;
 	text-transform: uppercase;
+
 }
 
 #menu{
-	background: rgba(53, 103, 164, 0.8);
-    width: 100%;
+	background: #181818;
+	width: 100%;
+	border-bottom: 1px solid #aaaaaa;
+	
 
 }
+#menubtn{
+	margin-right: 555px;
+}
+
 
 header ul{
 	display: block;
-	width: 45%;
+	width: 100%;
 	height: inherit;
 	margin: 0px auto;
 	margin-top: -3px;
-	margin-left: 370px;
 }
 
 header ul li{
 	display: inline-block;
 	margin: 0px auto;
-	text-align: center;
+	text-align: left;
 	line-height: 88px;
 }
 
@@ -72,9 +82,13 @@ header a{
 
 header a:hover,
 .actived{
-	background: rgba(0,0,0,0.8);
+	background: #E42C2B ;
 }
 
+header a img{
+	width: 50px;
+	vertical-align: middle;	
+}
 /*Logotipo*/
 
 #logo{
@@ -88,8 +102,15 @@ header a:hover,
 
 #logo a:hover{
 	background: transparent;
-	color: black;
+	color: #181818;
 	transform:scale(1.50,1.50);
+}
+
+.company{
+	font-family: "United Sans light";
+	color: white;
+	margin-right: 50px;
+	font-size: 24pt;
 }
 
 /*Contenedor principal*/
@@ -99,11 +120,11 @@ header a:hover,
 	height: auto;
 	width: 75%;
 	margin: 0px auto;
-	box-shadow: 0px 0px 40px black;
-	border-left:1px solid #b7b7b7;
-	border-right:1px solid #b7b7b7;
-	background: rgba(255, 255, 255, 0.7);
-	padding-top: 120px;
+	box-shadow: 0px 0px 40px #181818;
+	border-top: 150px solid #181818;
+	background: white;
+	border-radius: 15px;
+	padding-top: 20px;
 }
 
 /*Pie de pagina*/
@@ -111,7 +132,7 @@ footer{
 	width: 75%;
 	margin: 0px auto;
 	padding-top: 15px;
-	color: rgba(0, 0, 0, 0.5);
+	color: white;
 }
 
 
@@ -162,6 +183,7 @@ article.about{
 .container{
 	padding: 50px;
 	padding-top: 10px;
+	border-radius: 15px;
 }
 
 .container .image{
@@ -184,6 +206,7 @@ article.about{
 	border-bottom: 1px solid #ccc;
 	padding-bottom: 10px;
 	margin-bottom: 15px;
+	font-family: "United Sans light";
 }
 
 form{
