@@ -12,6 +12,7 @@ import { CreateComponent } from './components/create/create.component';
 import { ErrorComponent } from './components/error/error.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { EditComponent } from './components/edit/edit.component';
+import { InfoSodaComponent } from './components/info-soda/info-soda.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { EditComponent } from './components/edit/edit.component';
     CreateComponent,
     ErrorComponent,
     DetailComponent,
-    EditComponent
+    EditComponent,
+    InfoSodaComponent
   ],
   imports: [
     BrowserModule,
