@@ -198,7 +198,14 @@ article.about{
 }
 
 /*Sección con formulario*/
-
+.row {
+    display: flex;
+  }
+  
+  .column {
+	flex: 50%;
+	padding: 2% 2% 2% 2%;
+  }
 .container{
 	padding: 50px;
 	padding-top: 10px;
@@ -226,12 +233,13 @@ article.about{
 	font-family: "United Sans light";
 }
 
+
 form{
-	width: 80%;
+	width: 100%;
 }
 
 form label{
-	display: block;
+	display: inline-block;
 	width: 100%;
 	margin-top: 10px;
 	margin-bottom: 5px;

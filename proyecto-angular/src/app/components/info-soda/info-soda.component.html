@@ -1,4 +1,22 @@
 <div class="container">
     <h2>Editar Información</h2>
-    
+    <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
+        <div class="row">
+            <div class="column">
+                <p>
+                    <label for="name">Dirección</label>
+                    <input type="text" name="name" #name="ngModel" [(ngModel)]="project.name" required>
+                    <span class="form_error" *ngIf="name.touched && !name.valid"><strong>La dirección es obligatoria</strong></span>
+                </p>
+            </div>
+            <div class="column">
+                <p>
+                    <label for="name">Dirección</label>
+                    <input type="text" name="name" #name="ngModel" [(ngModel)]="project.name" required>
+                    <span class="form_error" *ngIf="name.touched && !name.valid"><strong>La dirección es obligatoria</strong></span>
+                </p>
+            </div>
+        </div>
+        <input type="submit" value="Enviar" [disabled]="!projectForm.form.valid">
+    </form>
 </div>

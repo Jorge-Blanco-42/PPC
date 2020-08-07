@@ -2,7 +2,7 @@
 
 var mongoose = require('mongoose');
 mongoose.set('useFindAndModify', false);
-
+var Schema = mongoose.Schema;
 var RestaurantSchema = Schema({
     name: String,
     phoneNumber: String,
@@ -16,3 +16,4 @@ var RestaurantSchema = Schema({
     cartLogo: String,
     workingTime: String
 });
+module.exports = mongoose.model('Restaurant', RestaurantSchema);

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-info-soda',
+  selector: 'info-soda',
   templateUrl: './info-soda.component.html',
   styleUrls: ['./info-soda.component.css']
 })
