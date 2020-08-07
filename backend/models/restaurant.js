@@ -16,3 +16,5 @@ var RestaurantSchema = Schema({
     cartLogo: String,
     workingTime: String
 });
+
+module.exports = mongoose.model('Restaurant', RestaurantSchema);

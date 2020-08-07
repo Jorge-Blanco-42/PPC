@@ -348,3 +348,22 @@ form input[disabled]{
 	font-weight: bold;
 	margin-top: 20px;
 }
+
+.row {
+	display: flex;
+  }
+  
+.column {
+flex: 50%;
+padding: 2% 2% 2% 2%;
+}
+
+.socialImg{
+	padding-top: 2%;
+	padding-right: 2%;
+}
+
+
+.contactImg{
+	float: right;
+}
