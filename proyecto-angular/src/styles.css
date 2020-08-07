@@ -80,47 +80,37 @@ header a{
 	transition: all 300ms;
 }	
 
-header a:hover
+header a:hover,
 .actived{
 	background: #E42C2B ;
 }
 
-#iconoG{
+header a img{
 	width: 50px;
 	vertical-align: middle;	
+}
+
+header a img:hover, .actived{
+	background: #E42C2B ;
+	border-radius: 15px;	
+}
+
+#iconoG{
 	position: absolute;
 	top: 20px;
 	right: 150px;
-	transition: all 300ms;
-	border-radius: 15px;
-}
-
-#iconoG:hover{
-	background: #E42C2B;
-	border: 10px solid #E42C2B;
 }
 
 #iconoC{
-	width: 50px;
-	vertical-align: middle;	
 	position: absolute;
 	top: 20px;
 	right: 80px;
-	transition: all 300ms;
-	border-radius: 15px;
 }
 
-#iconoC:hover{
-	background: #E42C2B;
-	border: 10px solid #E42C2B;
-}
 #iconoU{
-	width: 50px;
-	vertical-align: middle;	
 	position: absolute;
 	top: 20px;
 	right: 10px;
-	transition: all 300ms;
 }
 /*Logotipo*/
 
