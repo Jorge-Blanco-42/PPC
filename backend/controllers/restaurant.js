@@ -34,6 +34,23 @@ var controller = {
         });
     },
 
+    getRestaurants: function(req, res){
+        
+        Restaurant.find({/*Filtros: {year: 2019}*/}).exec((err, restaurants) =>{
+            if(err) return res.status(500).send({
+                message: "Error a devolver los datos"
+            });
+
+            if(!restaurants) return res.status(404).send({
+                message: "El proyecto no existe"
+            });
+
+            return res.status(200).send({
+                restaurants
+            })
+        });
+    },
+
     updateRestaurant: function(req, res){
         var restaurantID = req.params.id;
         var update = req.body;

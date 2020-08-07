@@ -8,6 +8,7 @@ var router = express.Router();
 var multipart = require('connect-multiparty');
 var multipartMiddleware = multipart({uploadDir: './uploads'});
 router.get("/homeR", RestaurantController.home);
+router.get("/get-restaurants", RestaurantController.getRestaurants);
 router.get("/get-restaurant/:id", RestaurantController.getRestaurant);
 router.put("/update-restaurant/:id", RestaurantController.updateRestaurant);
 router.post("/upload-image/:id", multipartMiddleware, RestaurantController.uploadImage);
