@@ -92,26 +92,21 @@ header a img{
 	vertical-align: middle;	
 }
 
-header a img:hover, .actived{
-	background: #E42C2B ;
-	border-radius: 15px;	
-}
-
 #iconoG{
 	position: absolute;
-	top: 20px;
-	right: 150px;
+	top: -4px;
+	right: 210px;
 }
 
 #iconoC{
 	position: absolute;
-	top: 20px;
-	right: 80px;
+	top: -4px;
+	right: 110px;
 }
 
 #iconoU{
 	position: absolute;
-	top: 20px;
+	top: -4px;
 	right: 10px;
 }
 /*Logotipo*/
