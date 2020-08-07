@@ -221,8 +221,6 @@ article.about{
 }
 
 .container h2{
-	display: block;
-	border-bottom: 1px solid #ccc;
 	padding-bottom: 10px;
 	margin-bottom: 15px;
 	font-family: "United Sans light";
