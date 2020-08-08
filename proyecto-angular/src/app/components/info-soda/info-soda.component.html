@@ -1,5 +1,5 @@
 <div class="container">
-    <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
+    <form #restaurantForm="ngForm" (ngSubmit)="onSubmit(restaurantForm)">
         <div class="row">
             <div class="column">
                 <h2>Editar Información</h2>
@@ -47,7 +47,7 @@
                 </p>
                 <br/><br/>
                 <p>
-                    <img src="../../../assets/img/Whatsapp.png" class="mediaInfoSodaSocial">
+                    <img src="../../../assets/img/whatsapp.png" class="mediaInfoSodaSocial">
                     <input type="text" name="whats" #whats="ngModel" [(ngModel)]="restaurant.whatsapp" required>
                     <span class="form_error" *ngIf="whats.touched && !whats.valid"><strong>Campo obligatorio</strong></span>
                 </p>
@@ -67,14 +67,14 @@
             <div class="column">
                 <p>
                     <img src="../../../assets/img/instagram.png" class="mediaInfoSodaSocial">
-                    <input type="text" name="face" #face="ngModel" [(ngModel)]="restaurant.instagram" required>
-                    <span class="form_error" *ngIf="face.touched && !face.valid"><strong>Campo obligatorio</strong></span>
+                    <input type="text" name="insta" #face="ngModel" [(ngModel)]="restaurant.instagram" required>
+                    <span class="form_error" *ngIf="insta.touched && !insta.valid"><strong>Campo obligatorio</strong></span>
                 </p>
                 <br/>
                 <p>
-                    <img src="../../../assets/img/Facebook.png" class="mediaInfoSodaSocial">
-                    <input type="text" name="insta" #insta="ngModel" [(ngModel)]="restaurant.facebook" required>
-                    <span class="form_error" *ngIf="insta.touched && !insta.valid"><strong>Campo obligatorio</strong></span>
+                    <img src="../../../assets/img/facebook.png" class="mediaInfoSodaSocial">
+                    <input type="text" name="face" #insta="ngModel" [(ngModel)]="restaurant.facebook" required>
+                    <span class="form_error" *ngIf="face.touched && !face.valid"><strong>Campo obligatorio</strong></span>
                 </p>
             </div>
             <div class="column">
@@ -103,7 +103,7 @@
         <!--CAmbiar la ruta por la del menu-->
         <div class="row">
             <button class="cancelButton" [routerLink]="['/proyectos']" >CANCELAR</button>
-            <input class="submitbtn" type="submit" value="Guardar" [disabled]="!projectForm.form.valid">
+            <input class="submitbtn" type="submit" value="Guardar" [disabled]="!restaurantForm.form.valid">
         </div>
         
         
