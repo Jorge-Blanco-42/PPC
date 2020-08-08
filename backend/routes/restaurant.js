@@ -11,8 +11,10 @@ router.get("/homeR", RestaurantController.home);
 router.get("/get-restaurants", RestaurantController.getRestaurants);
 router.get("/get-restaurant/:id", RestaurantController.getRestaurant);
 router.put("/update-restaurant/:id", RestaurantController.updateRestaurant);
-router.post("/upload-image/:id", multipartMiddleware, RestaurantController.uploadImage);
-router.get("/get-image/:image", RestaurantController.getImageFile);
+router.post("/upload-imageR/:id", multipartMiddleware, RestaurantController.uploadImageR);
+router.post("/upload-imageCo/:id", multipartMiddleware, RestaurantController.uploadImageCo);
+router.post("/upload-imageCa/:id", multipartMiddleware, RestaurantController.uploadImageCa);
+router.get("/get-imageR/:image", RestaurantController.getImageFile);
 
 
 module.exports = router;

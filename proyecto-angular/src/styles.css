@@ -13,6 +13,11 @@
 	font-family: "United Sans light";
 	src: url("./assets/css/fonts/UnitedSansReg-Light.otf");
 }
+
+@font-face{
+	font-family: "United Sans Bold";
+	src: url("./assets/css/fonts/UnitedSansReg-Bold.otf");
+}
 /*Generales*/
 
 *{
@@ -125,7 +130,12 @@ header a img{
 	color: #181818;
 	transform:scale(1.50,1.50);
 }
-
+.logo{
+	vertical-align: middle;
+	border: 1px solid #181818;
+	margin-left: 15px;
+	margin-top: 15px;
+}
 .company{
 	font-family: "United Sans light";
 	color: white;
@@ -199,12 +209,12 @@ article.about{
 
 /*Sección con formulario*/
 .row {
-    display: flex;
+	display: flex;
+	margin: auto;
   }
   
   .column {
 	flex: 50%;
-	padding: 2% 2% 2% 2%;
   }
 .container{
 	padding: 50px;
@@ -240,9 +250,20 @@ form{
 
 form label{
 	display: inline-block;
-	width: 100%;
-	margin-top: 10px;
-	margin-bottom: 5px;
+	width: 15%;
+	text-align: left;
+}
+
+.media{
+	vertical-align: middle;
+	margin-right: 5px;
+	width: 30px;
+}
+
+.logoname{
+	display: inline-block;
+	width: 30%;
+	text-align: left;
 }
 
 form input[type="text"],
@@ -251,10 +272,43 @@ form input[type="email"],
 form textarea{
 	width: 40%;
 	padding: 5px;
+	border-radius: 15px;
+}
+
+.uploadbtn{
+	vertical-align: middle;
+	margin-left: 5px;
+	cursor: pointer;
+}
+
+
+.cancelButton{
+	margin-left: auto;
+	margin-right: 5px;	
+	font-family: "united sans bold";
+	font-size: 17px;
+	padding: 10px;
+	color:#181818;
+	background: white;
+	border-radius: 10px;
+	border: 1px solid #181818;
+	cursor: pointer;
+}
+
+.submitbtn{
+	margin-right: auto;
+	margin-left: 5px;
+	font-family: "united sans bold";
+	font-size: 17px;
+	padding: 10px;
+	color: white;
+	background: #E42C2B;
+	border-radius: 10px;
+	border: 1px solid #E42C2B;
+	cursor: pointer;
 }
 
 form button,
-form input[type="submit"],
 .button-edit,
 .button-delete{
 	display: block;

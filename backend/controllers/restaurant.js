@@ -18,7 +18,6 @@ var controller = {
 
     getRestaurant: function(req, res){
         var restaurantID = req.params.id;
-        console.log(restaurantID);
         Restaurant.findById(restaurantID, (err, restaurant) =>{
             if(err) return res.status(500).send({
                 message: "Error a devolver los datos"
@@ -69,24 +68,97 @@ var controller = {
         });
     },
     
-    uploadImage: function(req, res){
+    uploadImageR: function(req, res){
         var restaurantID = req.params.id;
         var fileName = 'Sin imagen';
-        console.log(req.files);
         if(req.files){
-            var filePath = req.files.image.path;
+            var filePath = req.files.mainLogo.path;
             var fileSplit = filePath.split('\\');
             fileName = fileSplit[1];
             var extSplit = fileName.split("\.");
             var fileExt = extSplit[extSplit.length-1];
             if(fileExt == 'png' || fileExt == 'jpg' || fileExt == 'jpeg' || fileExt == 'gif'){
-                Restaurant.findByIdAndUpdate(restaurantID, {image: fileName}, {new:true}, (err, restaurantUpdated) =>{
+                Restaurant.findByIdAndUpdate(restaurantID, {mainLogo: fileName}, {new:true}, (err, restaurantUpdated) =>{
                     if(err) return res.status(500).send({
                         message: "La imagen no se ha subido"
                     });
         
                     if(!restaurantUpdated) return res.status(404).send({
-                        message: "El proyecto no existe"
+                        message: "No hay restaurante"
+                    });
+                    console.log(restaurantUpdated);
+                    return res.status(200).send({                      
+                        restaurantUpdated: restaurantUpdated
+                    });
+                });
+            }else{
+                fs.unlink(filePath, (err) =>{
+                    return res.status(200).send({
+                        message: "La extension no es valida"
+                    })
+                });
+                
+            }
+        }else{
+            return res.status(200).send({
+                message: fileName
+            });
+        }
+    },
+    uploadImageCo: function(req, res){
+        var restaurantID = req.params.id;
+        var fileName = 'Sin imagen';
+        if(req.files){
+            var filePath = req.files.contactLogo.path;
+            var fileSplit = filePath.split('\\');
+            fileName = fileSplit[1];
+            var extSplit = fileName.split("\.");
+            var fileExt = extSplit[extSplit.length-1];
+            if(fileExt == 'png' || fileExt == 'jpg' || fileExt == 'jpeg' || fileExt == 'gif'){
+                Restaurant.findByIdAndUpdate(restaurantID, {contactLogo: fileName}, {new:true}, (err, restaurantUpdated) =>{
+                    if(err) return res.status(500).send({
+                        message: "La imagen no se ha subido"
+                    });
+        
+                    if(!restaurantUpdated) return res.status(404).send({
+                        message: "No hay restaurante"
+                    });
+                    console.log(restaurantUpdated);
+                    return res.status(200).send({                      
+                        restaurantUpdated: restaurantUpdated
+                    });
+                });
+            }else{
+                fs.unlink(filePath, (err) =>{
+                    return res.status(200).send({
+                        message: "La extension no es valida"
+                    })
+                });
+                
+            }
+        }else{
+            return res.status(200).send({
+                message: fileName
+            });
+        }
+    },
+    uploadImageCa: function(req, res){
+        var restaurantID = req.params.id;
+        var fileName = 'Sin imagen';
+        if(req.files){
+            var filePath = req.files.cartLogo.path;
+            var fileSplit = filePath.split('\\');
+            fileName = fileSplit[1];
+            var extSplit = fileName.split("\.");
+            var fileExt = extSplit[extSplit.length-1];
+            if(fileExt == 'png' || fileExt == 'jpg' || fileExt == 'jpeg' || fileExt == 'gif'){
+                Restaurant.findByIdAndUpdate(restaurantID, {cartLogo: fileName}, {new:true}, (err, restaurantUpdated) =>{
+                    if(err) return res.status(500).send({
+                        message: "La imagen no se ha subido"
+                    });
+        
+                    if(!restaurantUpdated) return res.status(404).send({
+                        message: "No hay restaurante"
                     });
                     console.log(restaurantUpdated);
                     return res.status(200).send({                      
