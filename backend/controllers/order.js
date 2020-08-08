@@ -34,10 +34,6 @@ var controller = {
             return res.status(200).send({order : orderStored});
         });  
        
-        return res.status(200).send({
-            order : order,
-            message : "Método addOrder"
-        });
     },
 
     getOrder(req, res){
