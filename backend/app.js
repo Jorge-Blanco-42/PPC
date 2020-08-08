@@ -9,6 +9,7 @@ var restaurantRoutes = require("./routes/restaurant");
 var paymentMethodRoutes = require("./routes/paymentMethod");
 var orderRoutes = require("./routes/order");
 var productRoutes = require("./routes/product");
+var userRoutes = require("./routes/user");
 
 //middlewares
 app.use(bodyParser.urlencoded({extended:false}));
@@ -29,5 +30,6 @@ app.use("/api", restaurantRoutes); // poner /api antes de todas las url de Resta
 app.use("/api", paymentMethodRoutes); // poner /api antes de todas las url de PaymentMethod
 app.use("/api", orderRoutes); // poner /api antes de todas las url de Order
 app.use("/api", productRoutes); // poner /api antes de todas las url de Product
+app.use("/api", userRoutes); // poner /api antes de todas las url de User
 //exportar
 module.exports = app;
