@@ -2,6 +2,7 @@
 
 var mongoose = require('mongoose');
 mongoose.set('useFindAndModify', false);
+var Schema = mongoose.Schema;
 
 var UserSchema = Schema({
     name: String,
@@ -12,3 +13,5 @@ var UserSchema = Schema({
     role: String,
     orders: []
 });
+
+module.exports = mongoose.model("user", UserSchema);
