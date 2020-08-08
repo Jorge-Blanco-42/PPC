@@ -6,7 +6,7 @@ export class Restaurant{
         public facebook: String,
         public instagram: String,
         public whatsapp: String,
-        public address: String,
+        public adress: String,
         public mainLogo: String,
         public contactLogo: String,
         public cartLogo: String,
