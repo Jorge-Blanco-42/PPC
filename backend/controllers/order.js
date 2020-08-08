@@ -21,7 +21,7 @@ var controller = {
 
         var params = req.body;
 
-        order.numero = params.numero;
+        order.number = params.number;
         order.total = params.total;
         order.date = params.date;
 
@@ -34,7 +34,6 @@ var controller = {
             return res.status(200).send({order : orderStored});
         });  
        
-
         return res.status(200).send({
             order : order,
             message : "Método addOrder"
@@ -104,7 +103,7 @@ var controller = {
             });
 
             if(!orderRemoved) return res.status(404).send({
-                messaeg : "No se puede eliminar la orden"
+                message : "No se puede eliminar la orden"
             });
 
             return res.status(200).send({
