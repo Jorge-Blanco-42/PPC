@@ -72,7 +72,7 @@ var controller = {
         var restaurantID = req.params.id;
         var fileName = 'Sin imagen';
         if(req.files){
-            var filePath = req.files.image.path;
+            var filePath = req.files.mainLogo.path;
             var fileSplit = filePath.split('\\');
             fileName = fileSplit[1];
             var extSplit = fileName.split("\.");
@@ -109,7 +109,7 @@ var controller = {
         var restaurantID = req.params.id;
         var fileName = 'Sin imagen';
         if(req.files){
-            var filePath = req.files.image.path;
+            var filePath = req.files.contactLogo.path;
             var fileSplit = filePath.split('\\');
             fileName = fileSplit[1];
             var extSplit = fileName.split("\.");
@@ -146,7 +146,7 @@ var controller = {
         var restaurantID = req.params.id;
         var fileName = 'Sin imagen';
         if(req.files){
-            var filePath = req.files.image.path;
+            var filePath = req.files.cartLogo.path;
             var fileSplit = filePath.split('\\');
             fileName = fileSplit[1];
             var extSplit = fileName.split("\.");

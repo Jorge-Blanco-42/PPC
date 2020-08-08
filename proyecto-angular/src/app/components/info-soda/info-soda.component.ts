@@ -49,9 +49,9 @@ export class InfoSodaComponent implements OnInit {
     );
   }
 
-  imageUP(upload: Array<File>, response: any, type: string){
+  imageUP(upload: Array<File>, response: any, type: string, property: string){
     if (upload) {
-      this._uploadService.makeFileRequest(Global.url + "upload-"+ type +"/" + response.restaurantUpdated._id, [], upload, 'image')
+      this._uploadService.makeFileRequest(Global.url + "upload-"+ type +"/" + response.restaurantUpdated._id, [], upload, property)
         .then((result: any) => {
           if (result) {
             this.status = true;
@@ -88,9 +88,9 @@ export class InfoSodaComponent implements OnInit {
       response => {
         if (response.restaurantUpdated) {
           //subir imagen
-         this.imageUP(this.mainUpload, response,"imageR");
-         this.imageUP(this.ContactUpload, response,"imageCo");
-         this.imageUP(this.CartUpload, response,"imageCa");
+         this.imageUP(this.mainUpload, response,"imageR", "mainLogo");
+         this.imageUP(this.ContactUpload, response,"imageCo", "contactLogo");
+         this.imageUP(this.CartUpload, response,"imageCa", "cartLogo");
         } else {
           this.status = false;
         }
@@ -105,7 +105,6 @@ export class InfoSodaComponent implements OnInit {
   
   mainLogoFileChange(fileInput: any){
     this.mainUpload = <Array<File>>fileInput.target.files;
-
   }
   contactLogoFileChange(fileInput: any){
     this.ContactUpload = <Array<File>>fileInput.target.files;

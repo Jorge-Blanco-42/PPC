@@ -7,8 +7,8 @@
             <div class="column">
                 <p>
                     <span class="logoname">Logo principal</span>
-                    <input type="text" disabled="true"><img class="uploadbtn" src="../../../assets/img/upload.png" (click)="fileInput.click()" width="30px">    
-                    <input #fileInput type="file" (change)="mainLogoFileChange($event)" style="display:none;" />
+                    <input type="text" disabled="true"><img class="uploadbtn" src="../../../assets/img/upload.png" (click)="fileInputM.click()" width="30px">    
+                    <input #fileInputM type="file" (change)="mainLogoFileChange($event)" style="display:none;" />
                 </p>
                 <div *ngIf="restaurant.mainLogo">
                     Vista Previa:<img class="logo" src="{{url+'get-imageR/'+restaurant.mainLogo}}" width="50">
@@ -26,8 +26,8 @@
             <div class="column">
                 <p>
                     <span class="logoname">Logo de contacto</span>
-                    <input id="main" type="text" disabled="true"><img class="uploadbtn" src="../../../assets/img/upload.png" (click)="fileInput.click()" width="30px">    
-                    <input #fileInput type="file" (change)="contactLogoFileChange($event)" style="display:none;" />
+                    <input id="main" type="text" disabled="true"><img class="uploadbtn" src="../../../assets/img/upload.png" (click)="fileInputCo.click()" width="30px">    
+                    <input #fileInputCo type="file" (change)="contactLogoFileChange($event)" style="display:none;" />
                 </p>
                 <div *ngIf="restaurant.contactLogo">
                     Vista Previa:<img class="logo" src="{{url+'get-image/'+restaurant.contactLogo}}" width="50">
@@ -45,8 +45,8 @@
             <div class="column">
                 <p>
                     <span class="logoname">Logo de carrito</span> 
-                    <input type="text" disabled="true"><img class="uploadbtn" src="../../../assets/img/upload.png" (click)="fileInput.click()" width="30px">    
-                    <input #fileInput type="file" (change)="cartLogoFileChange($event)" style="display:none;" />
+                    <input id="contact" type="text" disabled="true"><img class="uploadbtn" src="../../../assets/img/upload.png" (click)="fileInputCa.click()" width="30px">    
+                    <input #fileInputCa type="file" (change)="cartLogoFileChange($event)" style="display:none;" />
                 </p>
                 <div *ngIf="restaurant.cartLogo">
                     Vista Previa:<img class="logo" src="{{url+'get-image/'+restaurant.cartLogo}}" width="50">
@@ -57,7 +57,7 @@
             <div class="column">
                 <p>
                     <label for="correo">Correo</label>
-                    <input type="email" name="correo" #correo="ngModel" [(ngModel)]="restaurant.email" required>
+                    <input id=cart type="email" name="correo" #correo="ngModel" [(ngModel)]="restaurant.email" required>
                     <span class="form_error" *ngIf="correo.touched && !correo.valid"><strong>Campo obligatorio</strong></span>
                 </p>
             </div>
@@ -105,6 +105,12 @@
                 </p>
             </div>
         </div>
-        <input type="submit" value="Enviar" [disabled]="!projectForm.form.valid">
+        <!--CAmbiar la ruta por la del menu-->
+        <div class="row">
+            <button class="cancelButton" [routerLink]="['/proyectos']" >CANCELAR</button>
+            <input class="submitbtn" type="submit" value="Guardar" [disabled]="!projectForm.form.valid">
+        </div>
+        
+        
     </form>
 </div>

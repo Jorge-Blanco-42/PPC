@@ -13,6 +13,11 @@
 	font-family: "United Sans light";
 	src: url("./assets/css/fonts/UnitedSansReg-Light.otf");
 }
+
+@font-face{
+	font-family: "United Sans Bold";
+	src: url("./assets/css/fonts/UnitedSansReg-Bold.otf");
+}
 /*Generales*/
 
 *{
@@ -204,7 +209,8 @@ article.about{
 
 /*Sección con formulario*/
 .row {
-    display: flex;
+	display: flex;
+	margin: auto;
   }
   
   .column {
@@ -275,8 +281,34 @@ form textarea{
 	cursor: pointer;
 }
 
+
+.cancelButton{
+	margin-left: auto;
+	margin-right: 5px;	
+	font-family: "united sans bold";
+	font-size: 17px;
+	padding: 10px;
+	color:#181818;
+	background: white;
+	border-radius: 10px;
+	border: 1px solid #181818;
+	cursor: pointer;
+}
+
+.submitbtn{
+	margin-right: auto;
+	margin-left: 5px;
+	font-family: "united sans bold";
+	font-size: 17px;
+	padding: 10px;
+	color: white;
+	background: #E42C2B;
+	border-radius: 10px;
+	border: 1px solid #E42C2B;
+	cursor: pointer;
+}
+
 form button,
-form input[type="submit"],
 .button-edit,
 .button-delete{
 	display: block;
