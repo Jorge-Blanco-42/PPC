@@ -21,6 +21,10 @@
                     <label for="name">Nombre</label>
                     <input type="text" name="name" #name="ngModel" [(ngModel)]="restaurant.name" required>
                     <span class="form_error" *ngIf="name.touched && !name.valid"><strong>Campo obligatorio</strong></span>
+                    <br/><br/>
+                    <label for="tel">Teléfono</label>
+                    <input type="text" name="tel" #tel="ngModel" [(ngModel)]="restaurant.phoneNumber" required>
+                    <span class="form_error" *ngIf="tel.touched && !tel.valid"><strong>Campo obligatorio</strong></span>
                 </p>
             </div>
             <div class="column">
@@ -37,9 +41,15 @@
         <div class="row">
             <div class="column">
                 <p>
-                    <label for="tel">Teléfono</label>
-                    <input type="text" name="tel" #tel="ngModel" [(ngModel)]="restaurant.phoneNumber" required>
-                    <span class="form_error" *ngIf="tel.touched && !tel.valid"><strong>Campo obligatorio</strong></span>
+                    <label for="correo">Correo</label>
+                    <input id=cart type="email" name="correo" #correo="ngModel" [(ngModel)]="restaurant.email" required>
+                    <span class="form_error" *ngIf="correo.touched && !correo.valid"><strong>Campo obligatorio</strong></span>
+                </p>
+                <br/><br/>
+                <p>
+                    <img src="../../../assets/img/Whatsapp.png" class="mediaInfoSodaSocial">
+                    <input type="text" name="whats" #whats="ngModel" [(ngModel)]="restaurant.whatsapp" required>
+                    <span class="form_error" *ngIf="whats.touched && !whats.valid"><strong>Campo obligatorio</strong></span>
                 </p>
             </div>
             <div class="column">
@@ -56,9 +66,15 @@
         <div class="row">
             <div class="column">
                 <p>
-                    <label for="correo">Correo</label>
-                    <input id=cart type="email" name="correo" #correo="ngModel" [(ngModel)]="restaurant.email" required>
-                    <span class="form_error" *ngIf="correo.touched && !correo.valid"><strong>Campo obligatorio</strong></span>
+                    <img src="../../../assets/img/instagram.png" class="mediaInfoSodaSocial">
+                    <input type="text" name="face" #face="ngModel" [(ngModel)]="restaurant.instagram" required>
+                    <span class="form_error" *ngIf="face.touched && !face.valid"><strong>Campo obligatorio</strong></span>
+                </p>
+                <br/>
+                <p>
+                    <img src="../../../assets/img/Facebook.png" class="mediaInfoSodaSocial">
+                    <input type="text" name="insta" #insta="ngModel" [(ngModel)]="restaurant.facebook" required>
+                    <span class="form_error" *ngIf="insta.touched && !insta.valid"><strong>Campo obligatorio</strong></span>
                 </p>
             </div>
             <div class="column">
@@ -69,31 +85,10 @@
                 </p>
             </div>
         </div>
+
         <div class="row">
             <div class="column">
-                <p>
-                    <img src="../../../assets/img/Instagram.png" class="media">
-                    <input type="text" name="face" #face="ngModel" [(ngModel)]="restaurant.facebook" required>
-                    <span class="form_error" *ngIf="face.touched && !face.valid"><strong>Campo obligatorio</strong></span>
-                </p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="column">
-                <p>
-                    <img src="../../../assets/img/Facebook.png" class="media">
-                    <input type="text" name="insta" #insta="ngModel" [(ngModel)]="restaurant.instagram" required>
-                    <span class="form_error" *ngIf="insta.touched && !insta.valid"><strong>Campo obligatorio</strong></span>
-                </p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="column">
-                <p>
-                    <img src="../../../assets/img/Whatsapp.png" class="media">
-                    <input type="text" name="whats" #whats="ngModel" [(ngModel)]="restaurant.whatsapp" required>
-                    <span class="form_error" *ngIf="whats.touched && !whats.valid"><strong>Campo obligatorio</strong></span>
-                </p>
+
             </div>
         </div>
         <div class="row">
