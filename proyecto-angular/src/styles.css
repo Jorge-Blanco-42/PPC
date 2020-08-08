@@ -57,11 +57,13 @@ header{
 	background: #181818;
 	width: 100%;
 	border-bottom: 1px solid #aaaaaa;
-	
-
 }
 
+#mapaPrevio{
+	width: 50%;
+	height: 50%;
 
+}
 
 header ul{
 	display: block;
