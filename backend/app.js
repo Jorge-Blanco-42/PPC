@@ -6,6 +6,7 @@ var app = express();
 // archivos de rutas
 var projectRoutes = require("./routes/project");
 var restaurantRoutes = require("./routes/restaurant");
+var paymentMethodRoutes = require("./routes/paymentMethod");
 
 //middlewares
 app.use(bodyParser.urlencoded({extended:false}));
@@ -23,5 +24,6 @@ app.use((req, res, next) => {
 //rutas 
 app.use("/api", projectRoutes); // poner /api antes de todas las url de Project
 app.use("/api", restaurantRoutes); // poner /api antes de todas las url de Restaurant
+app.use("/api", paymentMethodRoutes); // poner /api antes de todas las url de PaymentMethod
 //exportar
 module.exports = app;
