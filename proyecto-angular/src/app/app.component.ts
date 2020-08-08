@@ -29,7 +29,6 @@ export class AppComponent implements OnInit{
     response => {
       this.restaurant = response.restaurant;
       this.title = response.name;
-      console.log(this.restaurant);
     },
     error => {
       console.log(error);
