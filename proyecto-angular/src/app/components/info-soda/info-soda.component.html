@@ -95,7 +95,7 @@
             <div class="column">
                 <p>
                     <label for="dir">Dirección</label>
-                    <input type="text" name="dir" #dir="ngModel" [(ngModel)]="restaurant.adress" required>
+                    <input type="text" name="dir" #dir="ngModel" [(ngModel)]="restaurant.address" required>
                     <span class="form_error" *ngIf="dir.touched && !dir.valid"><strong>Campo obligatorio</strong></span>
                 </p>
             </div>
