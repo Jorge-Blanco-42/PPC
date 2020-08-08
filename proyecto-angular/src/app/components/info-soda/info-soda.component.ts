@@ -22,6 +22,7 @@ export class InfoSodaComponent implements OnInit {
   public CartUpload: Array<File>;
   public saved_restaurant: Restaurant;
   public url: string;
+  public mapURL: string;
   private _route: ActivatedRoute
   constructor(
     private _restaurantService: RestaurantService,
@@ -41,7 +42,7 @@ export class InfoSodaComponent implements OnInit {
       response => {
         this.restaurant = response.restaurant;
         this.ogRestaurant = response.restaurant;
-        console.log(this.restaurant);
+        this.mapURL = response.restaurant.address;
       },
       error => {
         console.log(error);
