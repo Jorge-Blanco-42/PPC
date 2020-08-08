@@ -1,7 +1,7 @@
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AboutComponent } from './components/about/about.component';
+import { SignUpComponent } from './components/signUp/signUp.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { CreateComponent } from './components/create/create.component';
@@ -12,8 +12,8 @@ import { InfoSodaComponent } from './components/info-soda/info-soda.component';
 import { CartComponent } from './components/cart/cart.component';
 
 const routes: Routes = [
-  {path: '', component: AboutComponent},
-  {path: 'sobre-mi', component: AboutComponent},
+  {path: '', component: ContactComponent},
+  {path: 'signUp', component: SignUpComponent},
   {path: 'contacto', component: ContactComponent},
   {path: 'proyectos', component: ProjectsComponent},
   {path: 'crear-proyecto', component: CreateComponent},
