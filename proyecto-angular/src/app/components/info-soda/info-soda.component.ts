@@ -55,9 +55,9 @@ export class InfoSodaComponent implements OnInit {
         .then((result: any) => {
           if (result) {
             this.status = true;
-            if(type == "main"){
+            if(type == "imageR"){
               this.restaurant.mainLogo = result.restaurantUpdated.mainLogo;
-            }else if(type == "contact"){
+            }else if(type == "imageCo"){
               this.restaurant.contactLogo = result.restaurantUpdated.contactLogo;
             }else{
               this.restaurant.cartLogo = result.restaurantUpdated.cartLogo;
@@ -70,8 +70,15 @@ export class InfoSodaComponent implements OnInit {
         });
     } else {
       this.status = true;
-      this.saved_restaurant = response.projectUpdated;
-      this.restaurant.mainLogo = response.projectUpdated.mainLogo;
+      this.saved_restaurant = response.restaurantUpdated;
+      if(type == "imageR"){
+        this.restaurant.mainLogo = response.restaurantUpdated.mainLogo;
+      }else if(type == "imageCo"){
+        this.restaurant.contactLogo = response.restaurantUpdated.contactLogo;
+      }else{
+        this.restaurant.cartLogo = response.restaurantUpdated.cartLogo;
+      }
+      
     }
   }
 
