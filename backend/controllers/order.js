@@ -24,6 +24,7 @@ var controller = {
         order.number = params.number;
         order.total = params.total;
         order.date = params.date;
+        order.product = params.product;
 
         order.save((err, orderStored) => {
 
