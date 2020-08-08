@@ -29,7 +29,7 @@ export class ContactComponent implements OnInit {
   }
 
   ngOnInit(): void {
-        console.log(this.restaurant.adress);
+        console.log(this.restaurant.address);
 }
 
 getRestaurant() {
