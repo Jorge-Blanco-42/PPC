@@ -3,7 +3,6 @@ import { Restaurant } from '../../models/restaurant';
 import { RestaurantService } from '../../services/restaurant.service';
 import { Global } from '../../services/global';
 import { Router, ActivatedRoute, Params} from '@angular/router';
-import { SafePipe } from '../../pipes/Safe.pipe';
 
 
 @Component({

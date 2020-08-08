@@ -1,1 +1,30 @@
-<p>cart works!</p>
+<div class="container">
+    <ul>
+        <div class="row">
+            <h2>Carrito</h2>
+        </div>
+        <div class="row">
+            <div class="column">
+                <h3>Tu Pedido</h3>
+            </div>
+            <div class="column">
+                <h3>Información Personal</h3>
+            </div>
+        </div>
+        <form #orderForm="ngForm" (ngSubmit)="onSubmit(orderForm)">
+            <div class="row">
+                <div class="column">
+                    <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+                        
+                    </cdk-virtual-scroll-viewport>
+                </div>
+                <div class="column">
+
+                </div>
+            </div>
+            <div class="row">
+                <input class="submitbtn" type="submit" value="RealizarPedido" [disabled]="!orderForm.valid">
+            </div>
+        </form>
+    </ul>
+</div>
