@@ -14,9 +14,12 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 export class InfoSodaComponent implements OnInit {
   public title: string;
   public restaurant: Restaurant;
+  public ogRestaurant: Restaurant;
   public status: boolean;
   public sent: boolean;
-  public filesToUpload: Array<File>;
+  public ContactUpload: Array<File>;
+  public mainUpload: Array<File>;
+  public CartUpload: Array<File>;
   public saved_restaurant: Restaurant;
   public url: string;
   private _route: ActivatedRoute
@@ -37,6 +40,8 @@ export class InfoSodaComponent implements OnInit {
     this._restaurantService.getRestaurant("5f2d75dccf9f4e41dcfe03ca").subscribe(
       response => {
         this.restaurant = response.restaurant;
+        this.ogRestaurant = response.restaurant;
+        console.log(this.restaurant);
       },
       error => {
         console.log(error);
@@ -44,8 +49,63 @@ export class InfoSodaComponent implements OnInit {
     );
   }
 
-  onSubmit(form){
-    console.log(this.restaurant);
+  imageUP(upload: Array<File>, response: any, type: string){
+    if (upload) {
+      this._uploadService.makeFileRequest(Global.url + "upload-"+ type +"/" + response.restaurantUpdated._id, [], upload, 'image')
+        .then((result: any) => {
+          if (result) {
+            this.status = true;
+            if(type == "main"){
+              this.restaurant.mainLogo = result.restaurantUpdated.mainLogo;
+            }else if(type == "contact"){
+              this.restaurant.contactLogo = result.restaurantUpdated.contactLogo;
+            }else{
+              this.restaurant.cartLogo = result.restaurantUpdated.cartLogo;
+            }
+            this.saved_restaurant = result.restaurantUpdated;
+          } else {
+            this._restaurantService.updateRestaurant(this.ogRestaurant);
+            this.status = false;                  
+          }
+        });
+    } else {
+      this.status = true;
+      this.saved_restaurant = response.projectUpdated;
+      this.restaurant.mainLogo = response.projectUpdated.mainLogo;
+    }
   }
 
+  onSubmit(form) {
+    this.sent = true;
+    this._restaurantService.updateRestaurant(this.restaurant).subscribe(
+      response => {
+        if (response.restaurantUpdated) {
+          //subir imagen
+         this.imageUP(this.mainUpload, response,"imageR");
+         this.imageUP(this.ContactUpload, response,"imageCo");
+         this.imageUP(this.CartUpload, response,"imageCa");
+        } else {
+          this.status = false;
+        }
+      },
+      error => {
+        this.status = false;
+        console.log(error);
+      }
+
+    );
+  }
+  
+  mainLogoFileChange(fileInput: any){
+    this.mainUpload = <Array<File>>fileInput.target.files;
+
+  }
+  contactLogoFileChange(fileInput: any){
+    this.ContactUpload = <Array<File>>fileInput.target.files;
+
+  }
+  cartLogoFileChange(fileInput: any){
+    this.CartUpload = <Array<File>>fileInput.target.files;
+
+  }
 }

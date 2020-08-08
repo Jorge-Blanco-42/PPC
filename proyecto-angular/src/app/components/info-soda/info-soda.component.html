@@ -1,16 +1,108 @@
 <div class="container">
-    <h2>Editar Información</h2>
     <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
+        <div class="row">
+            <div class="column">
+                <h2>Editar Información</h2>
+            </div>
+            <div class="column">
+                <p>
+                    <span class="logoname">Logo principal</span>
+                    <input type="text" disabled="true"><img class="uploadbtn" src="../../../assets/img/upload.png" (click)="fileInput.click()" width="30px">    
+                    <input #fileInput type="file" (change)="mainLogoFileChange($event)" style="display:none;" />
+                </p>
+                <div *ngIf="restaurant.mainLogo">
+                    Vista Previa:<img class="logo" src="{{url+'get-imageR/'+restaurant.mainLogo}}" width="50">
+                </div>
+            </div>
+        </div>
         <div class="row">
             <div class="column">
                 <p>
                     <label for="name">Nombre</label>
                     <input type="text" name="name" #name="ngModel" [(ngModel)]="restaurant.name" required>
-                    <span class="form_error" *ngIf="name.touched && !name.valid"><strong>El nombre es obligatorio</strong></span>
+                    <span class="form_error" *ngIf="name.touched && !name.valid"><strong>Campo obligatorio</strong></span>
                 </p>
             </div>
             <div class="column">
-                
+                <p>
+                    <span class="logoname">Logo de contacto</span>
+                    <input id="main" type="text" disabled="true"><img class="uploadbtn" src="../../../assets/img/upload.png" (click)="fileInput.click()" width="30px">    
+                    <input #fileInput type="file" (change)="contactLogoFileChange($event)" style="display:none;" />
+                </p>
+                <div *ngIf="restaurant.contactLogo">
+                    Vista Previa:<img class="logo" src="{{url+'get-image/'+restaurant.contactLogo}}" width="50">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                <p>
+                    <label for="tel">Teléfono</label>
+                    <input type="text" name="tel" #tel="ngModel" [(ngModel)]="restaurant.phoneNumber" required>
+                    <span class="form_error" *ngIf="tel.touched && !tel.valid"><strong>Campo obligatorio</strong></span>
+                </p>
+            </div>
+            <div class="column">
+                <p>
+                    <span class="logoname">Logo de carrito</span> 
+                    <input type="text" disabled="true"><img class="uploadbtn" src="../../../assets/img/upload.png" (click)="fileInput.click()" width="30px">    
+                    <input #fileInput type="file" (change)="cartLogoFileChange($event)" style="display:none;" />
+                </p>
+                <div *ngIf="restaurant.cartLogo">
+                    Vista Previa:<img class="logo" src="{{url+'get-image/'+restaurant.cartLogo}}" width="50">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                <p>
+                    <label for="correo">Correo</label>
+                    <input type="email" name="correo" #correo="ngModel" [(ngModel)]="restaurant.email" required>
+                    <span class="form_error" *ngIf="correo.touched && !correo.valid"><strong>Campo obligatorio</strong></span>
+                </p>
+            </div>
+            <div class="column">
+                <p>
+                    <label for="horario">Horario de atención</label>
+                    <textarea type="text" name="horario" #horario="ngModel" [(ngModel)]="restaurant.workingTime" required></textarea>
+                    <span class="form_error" *ngIf="horario.touched && !horario.valid"><strong>Campo obligatorio</strong></span>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                <p>
+                    <img src="../../../assets/img/Instagram.png" class="media">
+                    <input type="text" name="face" #face="ngModel" [(ngModel)]="restaurant.facebook" required>
+                    <span class="form_error" *ngIf="face.touched && !face.valid"><strong>Campo obligatorio</strong></span>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                <p>
+                    <img src="../../../assets/img/Facebook.png" class="media">
+                    <input type="text" name="insta" #insta="ngModel" [(ngModel)]="restaurant.instagram" required>
+                    <span class="form_error" *ngIf="insta.touched && !insta.valid"><strong>Campo obligatorio</strong></span>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                <p>
+                    <img src="../../../assets/img/Whatsapp.png" class="media">
+                    <input type="text" name="whats" #whats="ngModel" [(ngModel)]="restaurant.whatsapp" required>
+                    <span class="form_error" *ngIf="whats.touched && !whats.valid"><strong>Campo obligatorio</strong></span>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                <p>
+                    <label for="dir">Dirección</label>
+                    <input type="text" name="dir" #dir="ngModel" [(ngModel)]="restaurant.adress" required>
+                    <span class="form_error" *ngIf="dir.touched && !dir.valid"><strong>Campo obligatorio</strong></span>
+                </p>
             </div>
         </div>
         <input type="submit" value="Enviar" [disabled]="!projectForm.form.valid">

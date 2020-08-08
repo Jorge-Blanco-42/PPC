@@ -125,7 +125,12 @@ header a img{
 	color: #181818;
 	transform:scale(1.50,1.50);
 }
-
+.logo{
+	vertical-align: middle;
+	border: 1px solid #181818;
+	margin-left: 15px;
+	margin-top: 15px;
+}
 .company{
 	font-family: "United Sans light";
 	color: white;
@@ -204,7 +209,6 @@ article.about{
   
   .column {
 	flex: 50%;
-	padding: 2% 2% 2% 2%;
   }
 .container{
 	padding: 50px;
@@ -240,9 +244,20 @@ form{
 
 form label{
 	display: inline-block;
-	width: 100%;
-	margin-top: 10px;
-	margin-bottom: 5px;
+	width: 15%;
+	text-align: left;
+}
+
+.media{
+	vertical-align: middle;
+	margin-right: 5px;
+	width: 30px;
+}
+
+.logoname{
+	display: inline-block;
+	width: 30%;
+	text-align: left;
 }
 
 form input[type="text"],
@@ -251,6 +266,13 @@ form input[type="email"],
 form textarea{
 	width: 40%;
 	padding: 5px;
+	border-radius: 15px;
+}
+
+.uploadbtn{
+	vertical-align: middle;
+	margin-left: 5px;
+	cursor: pointer;
 }
 
 form button,
@@ -353,4 +375,23 @@ form input[disabled]{
 	display: block;
 	font-weight: bold;
 	margin-top: 20px;
+}
+
+.row {
+	display: flex;
+  }
+  
+.column {
+flex: 50%;
+padding: 2% 2% 2% 2%;
+}
+
+.socialImg{
+	padding-top: 2%;
+	padding-right: 2%;
+}
+
+
+.contactImg{
+	float: right;
 }
