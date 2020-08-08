@@ -13,6 +13,7 @@ import { ErrorComponent } from './components/error/error.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { EditComponent } from './components/edit/edit.component';
 import { InfoSodaComponent } from './components/info-soda/info-soda.component';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { InfoSodaComponent } from './components/info-soda/info-soda.component';
     ErrorComponent,
     DetailComponent,
     EditComponent,
-    InfoSodaComponent
+    InfoSodaComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

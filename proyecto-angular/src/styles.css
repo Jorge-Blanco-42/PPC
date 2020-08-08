@@ -39,6 +39,11 @@ body{
 
 /*Barra de navegacion / cabecera*/
 
+#companyLogo{
+	vertical-align: middle;
+	margin-right: 5px;
+	width: 60px;
+}
 header{
 	display: block;
 	width: 100%;
@@ -141,6 +146,7 @@ header a img{
 	color: white;
 	margin-right: 50px;
 	font-size: 24pt;
+	vertical-align: middle;
 }
 
 /*Contenedor principal*/

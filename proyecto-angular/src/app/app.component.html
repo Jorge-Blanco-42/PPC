@@ -3,13 +3,13 @@
     <ul>
       <!--Quitar valores quemados luego-->
       <li id = "logo"><div class="image">
-        <!--<img src="{{url+'get-image/'+project.image}}" *ngIf="project.image">-->
+        <img id="companyLogo" src="{{url+'get-image/'+restaurant.mainLogo}}" width="50px" *ngIf="restaurant.mainLogo">
       </div></li>
-      <li class = "company">PPC</li>
+      <li class = "company">{{restaurant.name}}</li>
       <li><a [routerLink]="['/contacto']" [routerLinkActive]="['actived']">Contacto</a></li>
       <li id = "menubtn"><a [routerLink]="['/proyectos']" [routerLinkActive]="['actived']">Menú</a></li>
-      <li><a id="iconoG" [routerLink]="['/crear-proyecto']" [routerLinkActive]="['actived']" ><img src="../assets/img/gears.png"></a></li>
-      <li><a id="iconoC" [routerLink]="['/sobre-mi']" [routerLinkActive]="['actived']" ><img src="../assets/img/carrito.png" ></a></li>
+      <li><a id="iconoG" [routerLink]="['/info-soda']" [routerLinkActive]="['actived']" ><img src="../assets/img/gears.png"></a></li>
+      <li><a id="iconoC" [routerLink]="['/cart']" [routerLinkActive]="['actived']" ><img src="../assets/img/carrito.png" ></a></li>
       <li><a id="iconoU" [routerLink]="['/sobre-mi']" [routerLinkActive]="['actived']" ><img src="../assets/img/usuario.png" ></a></li>
     </ul>
   </nav>

@@ -9,6 +9,7 @@ import { ErrorComponent } from './components/error/error.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { EditComponent } from './components/edit/edit.component';
 import { InfoSodaComponent } from './components/info-soda/info-soda.component';
+import { CartComponent } from './components/cart/cart.component';
 
 const routes: Routes = [
   {path: '', component: AboutComponent},
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path: 'proyecto/:id', component: DetailComponent},
   {path: 'editar-proyecto/:id', component: EditComponent},
   {path: 'info-soda', component: InfoSodaComponent},
+  {path: 'cart', component: CartComponent},
   {path: '**', component: ErrorComponent}
 ];
 
