@@ -8,7 +8,9 @@ var Schema = mongoose.Schema;
 var OrderSchema = Schema({
     number: String,
     total: String,
-    date: String
+    date: Date,
+    products : []
+
 });
 
 module.exports = mongoose.model("order", OrderSchema);
