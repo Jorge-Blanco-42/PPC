@@ -14,14 +14,12 @@
         <form #orderForm="ngForm" (ngSubmit)="onSubmit(orderForm)">
             <div class="row">
                 <div class="column">
-                    <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
-                        
-                    </cdk-virtual-scroll-viewport>
+                    
                 </div>
                 <div class="column">
-                    <label for="name">Nombre</label>
-                    <input type="text" name="name" #name="ngModel" [(ngModel)]="user.name" required>
-                    <span class="form_error" *ngIf="name.touched && !name.valid"><strong>Campo obligatorio</strong></span>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="user.name" required>
+                    <span class="form_error" *ngIf="nombre.touched && !nombre.valid"><strong>Campo obligatorio</strong></span>
                     <br/><br/>
                     <label for="tel">Teléfono</label>
                     <input type="text" name="tel" #tel="ngModel" [(ngModel)]="user.phoneNumber" required>

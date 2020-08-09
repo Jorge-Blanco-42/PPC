@@ -22,10 +22,13 @@ export class CartComponent implements OnInit {
     private _paymentMethodService: PaymentMethodService
   ) { 
     this.url = Global.url;
+    this.getUser("5f2f42f7a992ed52cc6634ff");
   }
 
   ngOnInit(): void {
-    this.getUser("5f2f42f7a992ed52cc6634ff");
+    this.getPayments();
+    //
+    
 }
 
 getPayments(){
@@ -33,6 +36,7 @@ getPayments(){
     response =>{
       if(response.projects){
         this.payments = response.payments;
+        console.log(this.payments);
       }
     },
     error =>{
@@ -45,6 +49,7 @@ getUser(userID: string) {
   this._userService.getUser(userID).subscribe(
     response => {
       this.user = response.user;
+      console.log(this.user);
     },
     error => {
       console.log(error);
