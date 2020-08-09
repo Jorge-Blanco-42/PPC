@@ -8,6 +8,7 @@ import { AppRoutingModule ,appRoutingProviders} from './app-routing.module';
 import { AppComponent} from './app.component';
 import { AboutComponent } from './components/about/about.component';
 import { SignUpComponent } from './components/signUp/signUp.component';
+import { LogInComponent } from './components/logIn/logIn.component';
 import { ContactComponent} from './components/contact/contact.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { CreateComponent } from './components/create/create.component';
@@ -24,6 +25,7 @@ import {SafePipe} from './pipes/Safe.pipe'
     AppComponent,
     AboutComponent,
     SignUpComponent,
+    LogInComponent,
     ContactComponent,
     SafePipe,
     ProjectsComponent,

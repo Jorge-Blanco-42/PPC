@@ -1,7 +1,7 @@
 <div id="contentParaTapar" >
 <form id="contentRegistro" #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
     <div class="paddingTop">
-        <h2 class="titulo">Registro</h2><br/><br/>
+        <h2 class="tituloCentrado">Registro</h2><br/><br/>
     </div>
 
     <div class='rowRegistro'>
@@ -34,8 +34,11 @@
                 <label for="address">Dirección</label>
                 <textarea type="text" name="address" #address="ngModel" [(ngModel)]="user.address" required></textarea>
                 <span class="form_error" *ngIf="address.touched && !address.valid"><strong>Campo obligatorio</strong></span>
-            </p>
+            </p>    
             <br/><br/>
+            <p>
+
+            </p>
 
         </div>
  
@@ -44,6 +47,8 @@
         <button class="cancelButton" [routerLink]="['/contacto']" >CANCELAR</button>
         <input class="submitbtn" type="submit" value="Guardar">
     </div>
+    <br/>
+   <h3 class="tituloCentrado">Ya tienes cuenta? Ingresa <u [routerLink]="['/logIn']">aquí</u>.</h3>
 </form>
 <img class="bottomleft" src="../assets/img/principal.png" width="10%">
 </div>

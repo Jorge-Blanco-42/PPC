@@ -501,3 +501,13 @@ form input[disabled]{
 .paddingTop{
 	padding-top: 20px;
 }
+
+.tituloCentrado{
+    text-align: center;
+}
+  
+
+.centrarImg{
+	padding-top: 5%;
+	padding-left: 45%;
+}

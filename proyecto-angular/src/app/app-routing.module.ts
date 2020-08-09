@@ -1,6 +1,5 @@
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
 import { SignUpComponent } from './components/signUp/signUp.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ProjectsComponent } from './components/projects/projects.component';
@@ -10,10 +9,12 @@ import { DetailComponent } from './components/detail/detail.component';
 import { EditComponent } from './components/edit/edit.component';
 import { InfoSodaComponent } from './components/info-soda/info-soda.component';
 import { CartComponent } from './components/cart/cart.component';
+import { LogInComponent } from './components/logIn/logIn.component';
 
 const routes: Routes = [
   {path: '', component: ContactComponent},
   {path: 'signUp', component: SignUpComponent},
+  {path: 'logIn', component: LogInComponent},
   {path: 'contacto', component: ContactComponent},
   {path: 'proyectos', component: ProjectsComponent},
   {path: 'crear-proyecto', component: CreateComponent},
