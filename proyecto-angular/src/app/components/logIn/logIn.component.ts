@@ -18,7 +18,7 @@ export class LogInComponent implements OnInit {
   constructor(
 
   ){ 
-
+    this.user = new User('','','','','','cliente',[]);
   }
 
   ngOnInit(): void {
