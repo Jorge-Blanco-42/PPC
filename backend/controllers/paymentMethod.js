@@ -32,17 +32,12 @@ var controller = {
 
             return res.status(200).send({paymentMethod : paymentStored});
         });  
-       
-
-        return res.status(200).send({
-            paymentMethod : paymentMethod,
-            message : "Método paymentMethod"
-        });
+  
     },
 
     getPaymentMethod(req, res){
         var paymentID = req.params.id;
-
+        
         if(paymentID == null) res.status(404).send({message : "El proyecto no existe "});
 
         Payment.findById(paymentID, (err, payment) => {
