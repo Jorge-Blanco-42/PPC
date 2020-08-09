@@ -14,9 +14,9 @@ import { ErrorComponent } from './components/error/error.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { EditComponent } from './components/edit/edit.component';
 import { InfoSodaComponent } from './components/info-soda/info-soda.component';
-import { CartComponent } from './components/cart/cart.component';
 
-import {SafePipe} from './pipes/Safe.pipe'
+import {SafePipe} from './pipes/Safe.pipe';
+import { CarritoComponent } from './components/carrito/carrito.component'
 
 @NgModule({
   declarations: [
@@ -30,7 +30,7 @@ import {SafePipe} from './pipes/Safe.pipe'
     DetailComponent,
     EditComponent,
     InfoSodaComponent,
-    CartComponent
+    CarritoComponent
   ],
   imports: [
     BrowserModule,

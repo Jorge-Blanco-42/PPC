@@ -38,7 +38,6 @@ var controller = {
     getPaymentMethod(req, res){
         var paymentID = req.params.id;
         
-        if(paymentID == null) res.status(404).send({message : "El proyecto no existe "});
 
         Payment.findById(paymentID, (err, payment) => {
 
@@ -60,11 +59,11 @@ var controller = {
             });
 
             if(!payments) return res.status(404).send({
-                message: "El proyecto no existe"
+                message: "No hay metodos de pago"
             });
 
             return res.status(200).send({
-                payments : payments
+                payments
             })
         });
     }, 

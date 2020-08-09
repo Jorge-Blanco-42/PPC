@@ -9,6 +9,6 @@ var PaymentMethodSchema = Schema({
     state: Boolean
 });
 
-module.exports = mongoose.model("paymentMethod", PaymentMethodSchema);
+module.exports = mongoose.model("paymentmethod", PaymentMethodSchema);
 
 
