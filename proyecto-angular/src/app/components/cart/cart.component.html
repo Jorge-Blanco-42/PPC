@@ -1,1 +1,44 @@
-<p>cart works!</p>
+<div class="container">
+    <ul>
+        <div class="row">
+            <h2>Carrito</h2>
+        </div>
+        <div class="row">
+            <div class="column">
+                <h3>Tu Pedido</h3>
+            </div>
+            <div class="column">
+                <h3>Información Personal</h3>
+            </div>
+        </div>
+        <form #orderForm="ngForm" (ngSubmit)="onSubmit(orderForm)">
+            <div class="row">
+                <div class="column">
+                    <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+                        
+                    </cdk-virtual-scroll-viewport>
+                </div>
+                <div class="column">
+                    <label for="name">Nombre</label>
+                    <input type="text" name="name" #name="ngModel" [(ngModel)]="user.name" required>
+                    <span class="form_error" *ngIf="name.touched && !name.valid"><strong>Campo obligatorio</strong></span>
+                    <br/><br/>
+                    <label for="tel">Teléfono</label>
+                    <input type="text" name="tel" #tel="ngModel" [(ngModel)]="user.phoneNumber" required>
+                    <span class="form_error" *ngIf="tel.touched && !tel.valid"><strong>Campo obligatorio</strong></span>
+                    <br/><br/>
+                    <label for="correo">Correo</label>
+                    <input type="email" name="correo" #correo="ngModel" [(ngModel)]="user.email" required>
+                    <span class="form_error" *ngIf="correo.touched && !correo.valid"><strong>Campo obligatorio</strong></span>
+                    <br/><br/>
+                    <label for="dir">Dirección</label>
+                    <textarea type="text" name="dir" #dir="ngModel" [(ngModel)]="user.address" required></textarea>
+                    <span class="form_error" *ngIf="dir.touched && !dir.valid"><strong>Campo obligatorio</strong></span>
+                </div>
+            </div>
+            <div class="row">
+                <input class="submitbtn" type="submit" value="RealizarPedido" [disabled]="!orderForm.valid">
+            </div>
+        </form>
+    </ul>
+</div>
