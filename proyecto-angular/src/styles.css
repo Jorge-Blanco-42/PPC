@@ -149,6 +149,28 @@ header a img{
 	vertical-align: middle;
 }
 
+#contentParaTapar{
+	min-height: 600px;
+	height: auto;
+	width: 100%;
+	margin: 0px auto;
+	box-shadow: 0px 0px 40px #181818;
+	background: #181818;
+	border-radius: 0px;
+	padding-top: 20px;
+}
+
+#contentRegistro{
+	min-height: 600px;
+	height: 100%;
+	width: 60%;
+	margin: 0px auto;
+	box-shadow: 0px 0px 40px #181818;
+	background: white;
+	border-radius: 15px;
+	padding-top: 20px;
+}
+
 /*Contenedor principal*/
 
 #content{
@@ -159,7 +181,7 @@ header a img{
 	box-shadow: 0px 0px 40px #181818;
 	background: white;
 	border-radius: 15px;
-	padding-top: 20px;
+
 }
 
 /*Pie de pagina*/
@@ -312,6 +334,7 @@ form textarea{
 	font-family: "united sans bold";
 	font-size: 17px;
 	padding: 10px;
+	height: 50px;
 	color:#181818;
 	background: white;
 	border-radius: 10px;
@@ -446,6 +469,10 @@ form input[disabled]{
 	padding-left:30%;
 }
 
+.columnRegistro{
+	justify-content: center
+}
+
 .row {
 	display: flex;
   }
@@ -460,7 +487,17 @@ form input[disabled]{
 	padding-right: 2%;
 }
 
+.bottomleft {
+    position: absolute;
+    bottom: 150px;
+    right: 200px;
+    font-size: 18px;
+  }
 
 .contactImg{
 	float: right;
+}
+
+.paddingTop{
+	padding-top: 20px;
 }

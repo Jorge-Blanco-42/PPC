@@ -1,21 +1,21 @@
-<div class="container">
-<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
-    <div>
-        <h2>Registro</h2><br/>
+<div id="contentParaTapar" >
+<form id="contentRegistro" #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+    <div class="paddingTop">
+        <h2 class="titulo">Registro</h2><br/><br/>
     </div>
 
     <div class='rowRegistro'>
-        <div class='column'>
+        <div class='columnRegistro'>
             <p>
                 <label for="name">Nombre</label>
                 <input type="text" name="name" #name="ngModel" [(ngModel)]="user.name" required>
-                <span class="form_error" *ngIf="name.touched && !name.valid"><strong>Campo obligatorio</strong></span>
+                <span class="form_error" *ngIf="name.touched && !name.valid" [(ngModel)="user.name"]><strong>Campo obligatorio</strong></span>
             </p>
             <br/>
             <p>
                 <label for="email">Correo</label>
                 <input type="email" name="email" #email="ngModel" [(ngModel)]="user.email" required>
-                <span class="form_error" *ngIf="email.touched && !email.valid"><strong>Campo obligatorio</strong></span>
+                <span class="form_error" *ngIf="email.touched && !email.valid" [(ngModel)="user.email"]><strong>Campo obligatorio</strong></span>
             </p>
             <br/>
             <p>
@@ -32,20 +32,19 @@
             <br/>
             <p>
                 <label for="address">Dirección</label>
-                <input type="text" name="address" #address="ngModel" [(ngModel)]="user.address" required>
+                <textarea type="text" name="address" #address="ngModel" [(ngModel)]="user.address" required></textarea>
                 <span class="form_error" *ngIf="address.touched && !address.valid"><strong>Campo obligatorio</strong></span>
             </p>
             <br/><br/>
 
         </div>
-
+ 
     </div>
     <div class="row">
         <button class="cancelButton" [routerLink]="['/contacto']" >CANCELAR</button>
         <input class="submitbtn" type="submit" value="Guardar">
     </div>
-
-    
 </form>
+<img class="bottomleft" src="../assets/img/principal.png" width="10%">
 </div>
 
