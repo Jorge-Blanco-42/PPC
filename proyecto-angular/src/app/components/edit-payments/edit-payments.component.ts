@@ -42,7 +42,7 @@ export class EditPaymentsComponent implements OnInit {
   }
 
   addPay(){
-    this.add = true;
+    this.add = !this.add;
     this.payment = new PaymentMethod("",true);
   }
 
