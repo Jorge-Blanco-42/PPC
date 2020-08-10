@@ -22,6 +22,8 @@ import { CarritoComponent } from './components/carrito/carrito.component';
 import { DashTestComponent } from './components/dashTest/dashTest.component';
 import { ProductsComponent } from './components/products/products.component';
 import { CreateProductComponent } from './components/createProduct/createProduct.component';
+import { EditPaymentsComponent } from './components/edit-payments/edit-payments.component'
+
 
 @NgModule({
   declarations: [
@@ -40,7 +42,8 @@ import { CreateProductComponent } from './components/createProduct/createProduct
     CarritoComponent,
     DashTestComponent,
     ProductsComponent,
-    CreateProductComponent
+    CreateProductComponent,
+    EditPaymentsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,42 @@
+<div class="container">
+    <h2>Editar métodos de pago</h2>
+    <form #paymentForm="ngForm" (ngSubmit)="onSubmit(paymentForm)">
+        <table class="paymentsTD">
+            <tr>
+                <th>Método</th>
+                <th>Estado</th>
+            </tr>
+            <tr *ngFor="let paymentx of payments; let i = index">
+                <td>{{paymentx.name}}</td>
+                <td>
+                    <select class="select-css" value="{{payments[i].state}}" (change)="updatePay(payments[i], !payments[i].state)">
+                        <option value="true">Activado</option>
+                        <option value="false">Desactivado</option>
+                    </select>
+                    <button type="button" class="deletebutton" (click)="deletePay(payments[i])">X</button>
+                </td>
+            </tr>
+            <tr *ngIf="add">
+                <td>
+                    <input type="text" name="name" #name="ngModel" [(ngModel)]="payment.name" required>
+                </td>
+                <td>
+                    <select id="newState" class="select-css" name="state" #state="ngModel" [(ngModel)]="payment.state">
+                        <option value="true">Activado</option>
+                        <option value="false">Desactivado</option>
+                    </select>
+                    <input class="createbutton" type="submit" value="✓" [disabled]="!paymentForm.form.valid"> 
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <button type="button" class="addButton" (click)="addPay()">+</button>
+                </td>
+                <td>
+
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>

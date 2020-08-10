@@ -40,20 +40,40 @@ var controller = {
        
     },
 
-    getUser(req, res){
+    getUserByID(req, res){
         var userID = req.params.id;
+
+        if(userID === null) res.status(404).send({message : "El usuario no existe"});
 
         User.findById(userID, (err, user) => {
 
             if(err) return res.status(500).send({message : "Error al obtener de la base"});
             if (!user) return res.status(404).send({message : "El Usuario no existe"});
             
-            return res.status(200).send({
+            return res.status(200).send(
                 user
-            })
+            );
         });
 
 
+    },
+    
+    getUser(req, res){
+        var email = req.body.email;
+        var password = req.body.password;
+
+        User.findOne({"email": email, 
+        "password" : password}, function (err, user){
+            if(err) return res.status(500).send({
+                message : "Error al devolver los datos"
+            });
+
+            if(!user) return res.status(404).send({
+                message : "El usuario no existe"
+            });
+
+            return res.status(200).send({user : user});
+        })
     },
 
     getUsers(req, res){

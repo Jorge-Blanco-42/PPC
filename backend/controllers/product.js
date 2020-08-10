@@ -91,7 +91,7 @@ var controller = {
         
     },
 
-/*
+
     uploadImage: function(req, res){
         var productID = req.params.id;
         var fileName = 'Sin imagen';
@@ -103,17 +103,17 @@ var controller = {
             var extSplit = fileName.split("\.");
             var fileExt = extSplit[extSplit.length-1];
             if(fileExt == 'png' || fileExt == 'jpg' || fileExt == 'jpeg' || fileExt == 'gif'){
-                Restaurant.findByIdAndUpdate(restaurantID, {image: fileName}, {new:true}, (err, restaurantUpdated) =>{
+                Product.findByIdAndUpdate(productID, {image: fileName}, {new:true}, (err, productUpdated) =>{
                     if(err) return res.status(500).send({
                         message: "La imagen no se ha subido"
                     });
         
-                    if(!restaurantUpdated) return res.status(404).send({
+                    if(!productUpdated) return res.status(404).send({
                         message: "El proyecto no existe"
                     });
-                    console.log(restaurantUpdated);
+                    console.log(productUpdated);
                     return res.status(200).send({                      
-                        restaurantUpdated: restaurantUpdated
+                        productUpdated: productUpdated
                     });
                 });
             }else{
@@ -129,7 +129,7 @@ var controller = {
                 message: fileName
             });
         }
-    },*/
+    },
 
     deleteProduct : function(req, res){
         var productID = req.params.id;
