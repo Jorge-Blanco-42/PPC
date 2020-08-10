@@ -59,8 +59,8 @@ var controller = {
     },
     
     getUser(req, res){
-        var email = req.body.email;
-        var password = req.body.password;
+        var email = req.params.email;
+        var password = req.params.password;
 
         User.findOne({"email": email, 
         "password" : password}, function (err, user){

@@ -9,7 +9,7 @@ router.get('/home', User.home);
 router.post('/test', User.test);
 router.post('/save-user', User.addUser);
 router.get('/get-user-id/:id?', User.getUserByID);
-router.get('/get-user', User.getUser)
+router.get('/get-user/:email/:password', User.getUser)
 router.get('/get-users', User.getUsers);
 router.put('/update-user/:id', User.updateUser);
 router.delete('/delete-user/:id', User.deleteUser);
