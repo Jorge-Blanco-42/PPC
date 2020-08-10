@@ -2,7 +2,7 @@
     <form #createProductForm="ngForm" (ngSubmit)="onSubmit(createProductForm)">
         <div class="row">
             <div class="column">
-                <h2>Editar Información</h2>
+                <h2>Agregar producto</h2>
             </div>
             <div class="column">
             </div>
@@ -11,11 +11,11 @@
             <div class="column">
                 <p>
                     <label for="name">Nombre</label>
-                    <input type="text" name="name" #name="ngModel" required>
+                    <input type="text" name="name" #name="ngModel" [(ngModel)]="product.name" required>
                     <span class="form_error" *ngIf="name.touched && !name.valid"><strong>Campo obligatorio</strong></span>
                     <br/><br/>
                     <label for="precio">Precio</label>
-                    <input type="text" name="precio" #precio="ngModel"required>
+                    <input type="text" name="precio" #precio="ngModel" [(ngModel)]="product.price" required>
                     <span class="form_error" *ngIf="precio.touched && !precio.valid"><strong>Campo obligatorio</strong></span>
                 </p>
             </div>
@@ -34,7 +34,7 @@
             <div class="column">
                 <p>
                     <label for="descripcion">Descripción</label>
-                    <textarea type="text" name="descripcion" #descripcion="ngModel" required></textarea>
+                    <textarea type="text" name="descripcion" #descripcion="ngModel" [(ngModel)]="product.description" required></textarea>
                     <span class="form_error" *ngIf="descripcion.touched && !descripcion.valid"><strong>Campo obligatorio</strong></span>
                 </p>
                 <br/><br/>

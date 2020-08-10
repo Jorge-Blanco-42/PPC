@@ -20,6 +20,8 @@ import { EditComponent } from './components/edit/edit.component';
 import { InfoSodaComponent } from './components/info-soda/info-soda.component';
 import { CarritoComponent } from './components/carrito/carrito.component';
 import { DashTestComponent } from './components/dashTest/dashTest.component';
+import { ProductsComponent } from './components/products/products.component';
+import { CreateProductComponent } from './components/createProduct/createProduct.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { DashTestComponent } from './components/dashTest/dashTest.component';
     EditComponent,
     InfoSodaComponent,
     CarritoComponent,
-    DashTestComponent
+    DashTestComponent,
+    ProductsComponent,
+    CreateProductComponent
   ],
   imports: [
     BrowserModule,

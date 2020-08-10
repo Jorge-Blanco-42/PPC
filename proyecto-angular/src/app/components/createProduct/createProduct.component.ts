@@ -36,9 +36,19 @@ export class CreateProductComponent implements OnInit {
     this._productService.saveProduct(this.product).subscribe(
       response =>{
         if(response.product){          
-          this.status = true;
-          this.saved_product = response.product;
-          form.reset();
+          //subir imagen
+          this._uploadService.makeFileRequest(Global.url+"upload-image/"+response.product._id,[],this.ImageUpload,'image')
+          .then((result: any) =>{
+            if(result){
+              this.status = true;
+              this.saved_product = response.product;
+              form.reset();
+            }else{
+              this._productService.deleteProduct(response.project._id);
+              this.status = false;
+            }     
+          });
+          
         }else{
           this.status = false;
         }
@@ -56,26 +66,6 @@ export class CreateProductComponent implements OnInit {
 
   }
 
-  imageUP(upload: Array<File>, response: any, type: string, property: string){
-    if (upload) {
-      this._uploadService.makeFileRequest(Global.url + "upload-"+ type +"/" + response.productUpdated._id, [], upload, property)
-        .then((result: any) => {
-          if (result) {
-            this.status = true;
-            this.product.image = result.productUpdated.image;
-            this.saved_product = result.productUpdated;
-          } else {
-            //this._restaurantService.updateRestaurant(this.ogRestaurant);
-            this.status = false;                  
-          }
-        });
-    } else {
-      this.status = true;
-      this.saved_product = response.productUpdated;
-      this.product.image = response.productUpdated.image;
 
-      
-    }
-  }
 
 }
