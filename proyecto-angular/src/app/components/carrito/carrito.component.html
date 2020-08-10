@@ -74,9 +74,15 @@
             </div>
 
         </div>
-        <div class="row">
+        <div *ngIf="!enviado" class="row">
             <button class="cancelButton" [routerLink]="['/proyectos']">CANCELAR</button>
             <input class="submitbtn" type="submit" value="Guardar" [disabled]="!userInfoForm.form.valid">
+        </div>
+        <div *ngIf="enviado" class="row">
+            <h2>¡Estamos preparando tu pedido!</h2>
+        </div>
+        <div *ngIf="enviado" class="row">
+            <button class="cancelButton" [routerLink]="['/proyectos']" style="margin: auto;">Volver</button>
         </div>
     </form>
 </div>

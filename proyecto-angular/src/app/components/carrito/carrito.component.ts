@@ -7,6 +7,7 @@ import { Global } from 'src/app/services/global';
 import { PaymentMethod } from '../../models/paymentMethod';
 import { Restaurant } from '../../models/restaurant';
 import { RestaurantService } from '../../services/restaurant.service';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'carrito',
@@ -21,14 +22,17 @@ export class CarritoComponent implements OnInit {
   public payment: PaymentMethod;
   public url: string;
   public logo: string;
+  public enviado: boolean;
   constructor(
     private _userService: UserService,
     private _paymentMethodService: PaymentMethodService,
-    private _restaurantService: RestaurantService
+    private _restaurantService: RestaurantService,
+    private _cookieService: CookieService
   ) {
     this.url = Global.url;
     this.user = new User("", "", "", "", "", "", []);
     this.payment = new PaymentMethod("", false);
+    this.enviado = false;
   }
 
   ngOnInit(): void {
@@ -52,7 +56,6 @@ export class CarritoComponent implements OnInit {
     this._restaurantService.getRestaurant("5f2d75dccf9f4e41dcfe03ca").subscribe(
       response => {
         this.logo = response.restaurant.cartLogo;
-        console.log(response.restaurant);
       },
       error => {
         console.log(error);
@@ -72,6 +75,6 @@ export class CarritoComponent implements OnInit {
     );
   }
   onSubmit(form) {
-
+    this.enviado = true;
   }
 }
