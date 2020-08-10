@@ -18,8 +18,8 @@ import { ErrorComponent } from './components/error/error.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { EditComponent } from './components/edit/edit.component';
 import { InfoSodaComponent } from './components/info-soda/info-soda.component';
-import { CarritoComponent } from './components/carrito/carrito.component'
-
+import { CarritoComponent } from './components/carrito/carrito.component';
+import { DashTestComponent } from './components/dashTest/dashTest.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +35,8 @@ import { CarritoComponent } from './components/carrito/carrito.component'
     DetailComponent,
     EditComponent,
     InfoSodaComponent,
-    CarritoComponent
+    CarritoComponent,
+    DashTestComponent
   ],
   imports: [
     BrowserModule,

@@ -11,6 +11,7 @@ import { InfoSodaComponent } from './components/info-soda/info-soda.component';
 import { LogInComponent } from './components/logIn/logIn.component';
 import { CarritoComponent } from './components/carrito/carrito.component';
 import { DashTestComponent } from './components/dashTest/dashTest.component';
+import { CreateProductComponent } from './components/createProduct/createProduct.component';
 
 const routes: Routes = [
   {path: '', component: ContactComponent},
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path: 'contacto', component: ContactComponent},
   {path: 'proyectos', component: ProjectsComponent},
   {path: 'crear-proyecto', component: CreateComponent},
+  {path: 'crear-producto', component: CreateProductComponent},
   {path: 'proyecto/:id', component: DetailComponent},
   {path: 'editar-proyecto/:id', component: EditComponent},
   {path: 'info-soda', component: InfoSodaComponent},
