@@ -1,0 +1,88 @@
+<div class="container">
+    <form #userInfoForm="ngForm" (ngSubmit)="onSubmit(userInfoForm)">
+
+        <div class="row">
+            <h2>Carrito</h2>
+        </div>
+        <div class="row">
+            <div class="column">
+                <h3>Tu pedido</h3>
+            </div>
+            <div class="column">
+                <h3>Información personal</h3>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="column">
+                <cdk-virtual-scroll-viewport itemSize="50" class="orderviewport">
+                    <div>aquí van los productos we</div>
+                </cdk-virtual-scroll-viewport>
+
+                <span class="carritoM">Subtotal</span><br>
+                <span class="carritoM">Envio</span><br>
+                <span class="carritoM">Total</span><br>
+
+
+            </div>
+            <div class="column">
+                <p>
+                    <label class="centerlabel" for="name">Nombre</label>
+                    <input class="largerInput" type="text" name="name" #name="ngModel" [(ngModel)]="user.name" required>
+                    <span class="form_error" *ngIf="name.touched && !name.valid"><strong>Campo
+                            obligatorio</strong></span>
+                    <br /><br />
+                    <label class="centerlabel" for="tel">Teléfono</label>
+                    <input class="largerInput" type="text" name="tel" #tel="ngModel" [(ngModel)]="user.phoneNumber"
+                        required>
+                    <span class="form_error" *ngIf="tel.touched && !tel.valid"><strong>Campo obligatorio</strong></span>
+                    <br /><br />
+                    <label class="centerlabel" for="correo">Correo</label>
+                    <input class="largerInput" type="email" name="correo" #correo="ngModel"
+                        [(ngModel)]="user.phoneNumber" required>
+                    <span class="form_error" *ngIf="correo.touched && !correo.valid"><strong>Campo
+                            obligatorio</strong></span>
+                    <br /><br />
+                    <label class="centerlabel" for="dir">Dirección</label>
+                    <textarea type="text" name="dir" #dir="ngModel" [(ngModel)]="user.address" required></textarea>
+                    <span class="form_error" *ngIf="dir.touched && !dir.valid"><strong>Campo obligatorio</strong></span>
+                    <br /><br />
+
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+            </div>
+            <div class="column">
+                <label class="centerlabel" for="pay">Método de pago</label>
+                <select name="pay" id="payMethods">
+                    <option *ngFor="let payment of payments">{{payment.name}}</option>
+                </select>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="column">
+                <div *ngIf="logo">
+                    <img class="logoCarrito" src="{{url+'get-image/'+logo}}" width="150">
+                </div>
+            </div>
+            <div class="column">
+                <span id="tiempo">Tiempo estimado de preparación</span>
+                <span class="espera">10 min</span>
+            </div>
+
+        </div>
+        <div *ngIf="!enviado" class="row">
+            <button class="cancelButton" [routerLink]="['/proyectos']">CANCELAR</button>
+            <input class="submitbtn" type="submit" value="Guardar" [disabled]="!userInfoForm.form.valid">
+        </div>
+        <div *ngIf="enviado" class="row">
+            <h2>¡Estamos preparando tu pedido!</h2>
+        </div>
+        <div *ngIf="enviado" class="row">
+            <button class="cancelButton" [routerLink]="['/proyectos']" style="margin: auto;">Volver</button>
+        </div>
+    </form>
+</div>

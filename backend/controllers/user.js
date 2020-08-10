@@ -43,8 +43,6 @@ var controller = {
     getUser(req, res){
         var userID = req.params.id;
 
-        if(userID == null) res.status(404).send({message : "El usuario no existe"});
-
         User.findById(userID, (err, user) => {
 
             if(err) return res.status(500).send({message : "Error al obtener de la base"});

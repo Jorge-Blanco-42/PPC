@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { CookieService } from 'ngx-cookie-service';
+import {SafePipe} from './pipes/Safe.pipe';
 
 import { AppRoutingModule ,appRoutingProviders} from './app-routing.module';
 import { AppComponent} from './app.component';
@@ -16,9 +18,8 @@ import { ErrorComponent } from './components/error/error.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { EditComponent } from './components/edit/edit.component';
 import { InfoSodaComponent } from './components/info-soda/info-soda.component';
-import { CartComponent } from './components/cart/cart.component';
+import { CarritoComponent } from './components/carrito/carrito.component'
 
-import {SafePipe} from './pipes/Safe.pipe'
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import {SafePipe} from './pipes/Safe.pipe'
     DetailComponent,
     EditComponent,
     InfoSodaComponent,
-    CartComponent
+    CarritoComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +44,7 @@ import {SafePipe} from './pipes/Safe.pipe'
     FormsModule,
     ScrollingModule
   ],
-  providers: [appRoutingProviders],
+  providers: [appRoutingProviders, CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,6 +4,7 @@ import { RestaurantService } from '../../services/restaurant.service';
 import { UploadService } from '../../services/upload.service';
 import { Global } from '../../services/global';
 import { ActivatedRoute } from '@angular/router';
+
 @Component({
   selector: 'info-soda',
   templateUrl: './info-soda.component.html',

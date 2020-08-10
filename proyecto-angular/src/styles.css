@@ -278,10 +278,36 @@ article.about{
 	text-align: center;
 }
 
-.example-viewport {
-	height: 200px;
+.centerlabel{
+	padding-left: 15%;
+}
+
+.orderviewport{
+	height: 150px;
 	width: 200px;
-  }
+	margin: auto;
+}
+.carritoM{
+	padding-left: 22%;
+}
+#tiempo{
+	width:30%;
+	display: inline-block;
+	text-align: center;
+	padding-left: 15%;
+}
+.espera{
+	border: 1px solid #FCBA0C ;
+	text-align: center;
+	padding-left: 10%;
+	padding-right: 10%;
+	padding-top: 3%;
+	padding-bottom: 3%;
+	background: #FCBA0C;
+	border-radius: 15px;
+	font-family: "united sans light";
+}
+
 form{
 	width: 100%;
 }
@@ -353,6 +379,12 @@ form textarea{
 	border-radius: 10px;
 	border: 1px solid #E42C2B;
 	cursor: pointer;
+}
+
+.logoCarrito{
+	vertical-align: middle;
+	margin: auto;
+	padding-left: 15%;
 }
 
 form button,
