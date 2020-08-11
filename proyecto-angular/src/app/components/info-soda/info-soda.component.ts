@@ -20,6 +20,9 @@ export class InfoSodaComponent implements OnInit {
   public ContactUpload: Array<File>;
   public mainUpload: Array<File>;
   public CartUpload: Array<File>;
+  public mainName: string;
+  public contactName: string;
+  public cartName: string;
   public saved_restaurant: Restaurant;
   public url: string;
   public mapURL: string;
@@ -31,6 +34,9 @@ export class InfoSodaComponent implements OnInit {
     this.restaurant = new Restaurant("","","","","","","","","","","");
     this.sent = false;
     this.url = Global.url;
+    this.mainName = "";
+    this.contactName = "";
+    this.cartName = "";
   }
 
   ngOnInit(): void {
@@ -104,15 +110,23 @@ export class InfoSodaComponent implements OnInit {
     );
   }
   
+  getFilename(path: string){
+    let filePath = path;
+    let fileSplit = filePath.split('\\');
+    return fileSplit[2];
+  }
+
   mainLogoFileChange(fileInput: any){
     this.mainUpload = <Array<File>>fileInput.target.files;
+    this.mainName = this.getFilename(fileInput.srcElement.value);
+    
   }
   contactLogoFileChange(fileInput: any){
     this.ContactUpload = <Array<File>>fileInput.target.files;
-
+    this.contactName = this.getFilename(fileInput.srcElement.value);
   }
   cartLogoFileChange(fileInput: any){
     this.CartUpload = <Array<File>>fileInput.target.files;
-
+    this.cartName = this.getFilename(fileInput.srcElement.value);
   }
 }

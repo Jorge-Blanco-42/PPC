@@ -28,6 +28,11 @@ export class UserService{
         return this._http.get(this.url+'get-user/'+id,{headers:headers});
     }
 
+    getUsers(): Observable<any>{
+        let headers = new HttpHeaders().set('Content-Type', 'application/json');
+        return this._http.get(this.url+'get-users',{headers:headers});
+    }
+
     updateUser(user): Observable<any>{
         let headers = new HttpHeaders().set('Content-Type', 'application/json');
         let params = JSON.stringify(user);

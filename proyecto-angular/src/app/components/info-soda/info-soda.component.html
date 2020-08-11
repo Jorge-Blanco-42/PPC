@@ -7,7 +7,7 @@
             <div class="column">
                 <p>
                     <span class="logoname">Logo principal</span>
-                    <input type="text" disabled="true"><img class="uploadbtn" src="../../../assets/img/upload.png" (click)="fileInputM.click()" width="30px">    
+                    <input type="text" disabled="true" name="main" #main="ngModel" [(ngModel)]="mainName"><img class="uploadbtn" src="../../../assets/img/upload.png" (click)="fileInputM.click()" width="30px">    
                     <input #fileInputM type="file" (change)="mainLogoFileChange($event)" style="display:none;" />
                 </p>
                 <div *ngIf="restaurant.mainLogo">
@@ -30,7 +30,7 @@
             <div class="column">
                 <p>
                     <span class="logoname">Logo de contacto</span>
-                    <input id="main" type="text" disabled="true"><img class="uploadbtn" src="../../../assets/img/upload.png" (click)="fileInputCo.click()" width="30px">    
+                    <input type="text" disabled="true" name="contact" #contact="ngModel" [(ngModel)]="contactName"><img class="uploadbtn" src="../../../assets/img/upload.png" (click)="fileInputCo.click()" width="30px">    
                     <input #fileInputCo type="file" (change)="contactLogoFileChange($event)" style="display:none;" />
                 </p>
                 <div *ngIf="restaurant.contactLogo">
@@ -55,7 +55,7 @@
             <div class="column">
                 <p>
                     <span class="logoname">Logo de carrito</span> 
-                    <input id="contact" type="text" disabled="true"><img class="uploadbtn" src="../../../assets/img/upload.png" (click)="fileInputCa.click()" width="30px">    
+                    <input type="text" disabled="true" name="cart" #cart="ngModel" [(ngModel)]="cartName"><img class="uploadbtn" src="../../../assets/img/upload.png" (click)="fileInputCa.click()" width="30px">    
                     <input #fileInputCa type="file" (change)="cartLogoFileChange($event)" style="display:none;" />
                 </p>
                 <div *ngIf="restaurant.cartLogo">

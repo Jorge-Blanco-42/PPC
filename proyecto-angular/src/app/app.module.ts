@@ -22,7 +22,9 @@ import { CarritoComponent } from './components/carrito/carrito.component';
 import { DashTestComponent } from './components/dashTest/dashTest.component';
 import { ProductsComponent } from './components/products/products.component';
 import { CreateProductComponent } from './components/createProduct/createProduct.component';
-import { EditPaymentsComponent } from './components/edit-payments/edit-payments.component'
+import { EditPaymentsComponent } from './components/edit-payments/edit-payments.component';
+import { RolesComponent } from './components/roles/roles.component';
+import { ChangeOrderComponent } from './components/change-order/change-order.component'
 
 
 @NgModule({
@@ -43,7 +45,9 @@ import { EditPaymentsComponent } from './components/edit-payments/edit-payments.
     DashTestComponent,
     ProductsComponent,
     CreateProductComponent,
-    EditPaymentsComponent
+    EditPaymentsComponent,
+    RolesComponent,
+    ChangeOrderComponent
   ],
   imports: [
     BrowserModule,

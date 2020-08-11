@@ -13,7 +13,7 @@ import { CarritoComponent } from './components/carrito/carrito.component';
 import { DashTestComponent } from './components/dashTest/dashTest.component';
 import { CreateProductComponent } from './components/createProduct/createProduct.component';
 import { EditPaymentsComponent } from './components/edit-payments/edit-payments.component';
-
+import { RolesComponent } from './components/roles/roles.component';
 const routes: Routes = [
   {path: '', component: ContactComponent},
   {path: 'signUp', component: SignUpComponent},
@@ -28,6 +28,7 @@ const routes: Routes = [
   {path: 'cart', component: CarritoComponent},
   {path: 'dashboard', component: DashTestComponent},
   {path: 'editPayments', component: EditPaymentsComponent},
+  {path: 'assignRoles', component: RolesComponent},
   {path: '**', component: ErrorComponent}
 ];
 

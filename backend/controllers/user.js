@@ -59,8 +59,8 @@ var controller = {
     },
     
     getUser(req, res){
-        var email = req.body.email;
-        var password = req.body.password;
+        var email = req.params.email;
+        var password = req.params.password;
 
         User.findOne({"email": email, 
         "password" : password}, function (err, user){
@@ -77,17 +77,17 @@ var controller = {
     },
 
     getUsers(req, res){
-        User.find({/*Filtros: {year: 2019}*/}).exec((err, user) =>{
+        User.find({/*Filtros: {year: 2019}*/}).exec((err, users) =>{
             if(err) return res.status(500).send({
                 message: "Error a devolver los datos"
             });
 
-            if(!user) return res.status(404).send({
+            if(!users) return res.status(404).send({
                 message: "El usuario no existe"
             });
 
             return res.status(200).send({
-                user : user
+                users : users
             })
         });
     }, 

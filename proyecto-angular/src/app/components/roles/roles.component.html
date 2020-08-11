@@ -1,0 +1,25 @@
+<div class="container">
+    <h2>Asignar roles</h2>
+    <table class="paymentsTD">
+        <tr>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Rol</th>
+        </tr>
+        <tr *ngFor="let userx of users; let i = index">
+            <td>{{userx.name}}</td>
+            <td>{{userx.email}}</td>
+            <td>
+                <select class="select-css bigSelect" value="{{users[i].role}}"
+                    (change)="updateUser(users[i], $event)">
+                    <option value="Administrador">Administrador</option>
+                    <option value="Repartidor">Repartidor</option>
+                    <option value="Cliente">Cliente</option>
+                    <option value="Desactivado">Desactivado</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <button type="button" class="cancelButton" style="margin-left: 50%;">Volver</button>
+</div>
