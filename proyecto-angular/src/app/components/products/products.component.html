@@ -1,1 +1,15 @@
-<h3>productos aki</h3>  
+<div class="container">
+    <ul class="paddingTop">
+        <li *ngFor="let product of products" class="product">
+                <div class="image">
+                    <img src="{{url+'get-image/'+product.image}}" *ngIf="product.image">
+                </div>
+                <h1>{{product.name}}</h1>
+                
+                <h3>{{product.price}} colones</h3>
+                <br/>
+                <p>{{product.description}}</p>
+                <button class="addCartButton">AGREGAR AL CARRITO</button>
+        </li>
+    </ul>
+</div>

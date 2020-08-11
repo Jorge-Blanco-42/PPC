@@ -4,7 +4,7 @@ import { ProductService } from '../../services/product.service';
 import { Global } from '../../services/global';
 
 @Component({
-  selector: 'products',
+  selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css'],
   providers: [ProductService]
@@ -25,8 +25,8 @@ export class ProductsComponent implements OnInit {
   getProducts(){
     this._productService.getProducts().subscribe(
       response =>{
-        if(response.products){
-          this.products = response.products;
+        if(response.product){
+          this.products = response.product;
         }
       },
       error =>{

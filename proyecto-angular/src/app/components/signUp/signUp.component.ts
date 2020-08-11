@@ -5,6 +5,7 @@ import { UserService } from '../../services/user.service';
 import { Router, ActivatedRoute, Params} from '@angular/router';
 import { UploadService } from '../../services/upload.service';
 import { SafePipe } from '../../pipes/Safe.pipe';
+import { SHA256, enc } from "crypto-js";
 
 
 @Component({
@@ -18,6 +19,7 @@ export class SignUpComponent implements OnInit {
   public status: boolean;
   public sent: boolean;
   public saved_user: User;
+  public encript : String;
   public url: string;
   constructor(
     private _userService: UserService,
@@ -26,6 +28,7 @@ export class SignUpComponent implements OnInit {
     this.user = new User('','','','','','cliente',[]);
     this.sent = false;
     this.url = Global.url;
+    this.encript = "";
   }
 
   ngOnInit(): void {
@@ -33,6 +36,8 @@ export class SignUpComponent implements OnInit {
   }
 
   onSubmit(form){
+    this.encript = SHA256(this.user.password).toString(enc.Hex);
+    this.user.password = this.encript;
     this.sent = true;
     this._userService.saveUser(this.user).subscribe(
       response =>{
@@ -49,17 +54,6 @@ export class SignUpComponent implements OnInit {
         console.log(error);
       }
 
-    );
-  }
-
-  getUser() {
-    this._userService.getUserByID("5f2f4d1c7f6f5c6160bd0b41").subscribe(
-      response => {
-        this.user = response.user;
-      },
-      error => {
-        console.log(error);
-      }
     );
   }
 

@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { SignUpComponent } from './components/signUp/signUp.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ProjectsComponent } from './components/projects/projects.component';
+import { ProductsComponent } from './components/products/products.component';
 import { CreateComponent } from './components/create/create.component';
 import { ErrorComponent } from './components/error/error.component';
 import { DetailComponent } from './components/detail/detail.component';
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path: 'logIn', component: LogInComponent},
   {path: 'contacto', component: ContactComponent},
   {path: 'proyectos', component: ProjectsComponent},
+  {path: 'productos', component: ProductsComponent},
   {path: 'crear-proyecto', component: CreateComponent},
   {path: 'crear-producto', component: CreateProductComponent},
   {path: 'proyecto/:id', component: DetailComponent},
