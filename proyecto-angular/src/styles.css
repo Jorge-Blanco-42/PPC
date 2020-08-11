@@ -148,6 +148,44 @@ td .deletebutton{
 	font-weight: 700;
 }
 
+.newProductButton{
+	background-color: #E42C2B;
+	border: 0px solid #181818;
+	padding: 2%;
+	border-radius: 10px;
+	color: white;
+	width: 25%;
+	margin-bottom: 2%;
+	font-size: medium;
+	font-weight: 700;
+}
+
+.editProductButton{
+	background-color: #FCBA0C;
+	border: 0px solid #181818;
+	padding: 3%;
+	border-radius: 10px;
+	color: white;
+	width: 50%;
+	margin-bottom: 2%;
+	font-size: medium;
+	font-weight: 700;
+}
+
+.deleteProductButton{
+	background-color: #E42C2B;
+	border: 0px solid #181818;
+	padding: 3%;
+	border-radius: 10px;
+	color: white;
+	width: 50%;
+	margin-bottom: 2%;
+	font-size: medium;
+	font-weight: 700;
+}
+
+/*Barra de navegacion / cabecera*/
+
 .problemButton{
 	display: inline-block;
 	background-color: #E42C2B;

@@ -14,6 +14,8 @@ import { SignUpComponent } from './components/signUp/signUp.component';
 import { LogInComponent } from './components/logIn/logIn.component';
 import { ContactComponent} from './components/contact/contact.component';
 import { ProjectsComponent } from './components/projects/projects.component';
+import { MantProductsComponent } from './components/mantProducts/mantProducts.component';
+import { DetailProductComponent } from './components/detailProduct/detailProduct.component';
 import { CreateComponent } from './components/create/create.component';
 import { ErrorComponent } from './components/error/error.component';
 import { DetailComponent } from './components/detail/detail.component';
@@ -42,6 +44,8 @@ import { UserFacadeComponent } from './components/user-facade/user-facade.compon
     ContactComponent,
     SafePipe,
     ProjectsComponent,
+    MantProductsComponent,
+    DetailProductComponent,
     CreateComponent,
     ErrorComponent,
     DetailComponent,
