@@ -1,1 +1,24 @@
-<p>change-order works!</p>
+<div class="container">
+    <h2>Cambiar estado de orden</h2>
+    <table class="paymentsTD">
+        <tr>
+            <th>Número de Orden</th>
+            <th>Monto</th>
+            <th>Estado</th>
+        </tr>
+        <tr *ngFor="let orderx of orders; let i = index">
+            <td style="text-align: center;">{{orderx.number}}</td>
+            <td style="text-align: center;">{{orderx.total}}</td>
+            <td>
+                <select class="select-css bigSelect" value="{{orders[i].state}}"
+                    (change)="updateOrder(orders[i], $event)">
+                    <option value="Preparando">Preparando</option>
+                    <option value="En camino">En camino</option>
+                    <option value="Completada">Completada</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <button type="button" class="cancelButton" style="margin-left: 50%;">Volver</button>
+</div>

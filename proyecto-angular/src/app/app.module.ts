@@ -19,7 +19,8 @@ import { InfoSodaComponent } from './components/info-soda/info-soda.component';
 import { CarritoComponent } from './components/carrito/carrito.component';
 import { EditPaymentsComponent } from './components/edit-payments/edit-payments.component';
 import { RolesComponent } from './components/roles/roles.component';
-import { ChangeOrderComponent } from './components/change-order/change-order.component'
+import { ChangeOrderComponent } from './components/change-order/change-order.component';
+import { HistoryComponent } from './components/history/history.component'
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { ChangeOrderComponent } from './components/change-order/change-order.com
     CarritoComponent,
     EditPaymentsComponent,
     RolesComponent,
-    ChangeOrderComponent
+    ChangeOrderComponent,
+    HistoryComponent
   ],
   imports: [
     BrowserModule,

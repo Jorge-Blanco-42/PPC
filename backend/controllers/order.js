@@ -56,17 +56,17 @@ var controller = {
     },
 
     getOrders(req, res){
-        Order.find({/*Filtros: {year: 2019}*/}).exec((err, order) =>{
+        Order.find({/*Filtros: {year: 2019}*/}).exec((err, orders) =>{
             if(err) return res.status(500).send({
                 message: "Error a devolver los datos"
             });
 
-            if(!order) return res.status(404).send({
+            if(!orders) return res.status(404).send({
                 message: "La orden no existe"
             });
 
             return res.status(200).send({
-                order : order
+                orders : orders
             })
         });
     }, 

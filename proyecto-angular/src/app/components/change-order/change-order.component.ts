@@ -25,11 +25,13 @@ export class ChangeOrderComponent implements OnInit {
   }
 
   getOrders() {
+    
     this._orderService.getOrders().subscribe(
       response => {
+        
         if (response.orders) {
+          console.log("xd");
           this.orders = response.orders;
-          console.log(response.orders);
         }
       },
       error => {
@@ -37,12 +39,11 @@ export class ChangeOrderComponent implements OnInit {
       }
     );
   }
-  updateUser(newOrder, state){
+  updateOrder(newOrder, state){
     newOrder.state = state.srcElement.value;
     console.log(state.srcElement.value);
     this._orderService.updateOrder(newOrder).subscribe(
       response => {
-        console.log(response);
       },
       error => {
         
