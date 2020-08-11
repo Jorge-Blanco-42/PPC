@@ -45,7 +45,7 @@
     </div>
     <div class="row">
         <button class="cancelButton" [routerLink]="['/contacto']" >CANCELAR</button>
-        <input class="submitbtn" type="submit" value="Guardar">
+        <input class="submitbtn" type="submit" value="Guardar" [disabled]="!userForm.form.valid">
     </div>
     <br/>
    <h3 class="tituloCentrado">Ya tienes cuenta? Ingresa <u [routerLink]="['/logIn']">aquí</u>.</h3>

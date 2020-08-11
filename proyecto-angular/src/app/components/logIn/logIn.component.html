@@ -22,7 +22,7 @@
         </div>
         <div class="row">
             <button class="cancelButton" [routerLink]="['/contacto']" >CANCELAR</button>
-            <input class="submitbtn" type="submit" value="Ingresar">
+            <input class="submitbtn" type="submit" value="Ingresar"  [disabled]="!userForm.form.valid">
         </div><br/>
         <br/>
        <h3 class="tituloCentrado">No tienes cuenta? Ingresa <u [routerLink]="['/signUp']">aquí</u>.</h3>

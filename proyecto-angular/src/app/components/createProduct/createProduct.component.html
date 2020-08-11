@@ -22,7 +22,7 @@
             <div class="column">
                 <p>
                     <span class="imagen">Cargar imagen</span>
-                    <input id="main" type="text" disabled="true" value="{{product.image}}">
+                    <input id="main" name ="main" type="text" disabled="true" #main="ngModel" [(ngModel)]="mainName">
                     <img class="uploadbtn" src="../../../assets/img/upload.png" (click)="fileInputCo.click()" width="30px">    
                     <input #fileInputCo type="file" (change)="productImageFileChange($event)" style="display:none;" />
                 </p>

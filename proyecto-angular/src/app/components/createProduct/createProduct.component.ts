@@ -19,6 +19,7 @@ export class CreateProductComponent implements OnInit {
   public saved_product: Product;
   public ImageUpload: Array<File>;
   public url: string;
+  public mainName: string;
   constructor(
     private _productService: ProductService,
     private _uploadService: UploadService
@@ -26,6 +27,7 @@ export class CreateProductComponent implements OnInit {
     this.product = new Product('','','','');
     this.sent = false;
     this.url = Global.url;
+    this.mainName = "";
   }
 
   ngOnInit(): void {
@@ -61,8 +63,15 @@ export class CreateProductComponent implements OnInit {
     );
   }
 
+  getFilename(path: string){
+    let filePath = path;
+    let fileSplit = filePath.split('\\');
+    return fileSplit[2];
+  }
+
   productImageFileChange(fileInput: any){
     this.ImageUpload = <Array<File>>fileInput.target.files;
+    this.mainName = this.getFilename(fileInput.srcElement.value);
   }
 
 
