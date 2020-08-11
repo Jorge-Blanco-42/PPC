@@ -9,6 +9,7 @@ var OrderSchema = Schema({
     number: String,
     total: String,
     date: Date,
+    state: String,
     products : []
 
 });

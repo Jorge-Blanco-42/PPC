@@ -431,6 +431,7 @@ form textarea{
 .cancelButton{	
 	font-family: "united sans bold";
 	font-size: 17px;
+	margin-left: auto;
 	padding: 10px;
 	color:#181818;
 	background: white;
