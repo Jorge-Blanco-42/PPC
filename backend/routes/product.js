@@ -14,5 +14,7 @@ router.get('/get-products', Product.getProducts);
 router.post("/upload-image-product/:id", multipartMiddleware, Product.uploadImage);
 router.put('/update-product/:id', Product.updateProduct);
 router.delete('/delete-product/:id', Product.deleteProduct);
+router.get("/get-imageP/:image", Product.getImageFile);
+
 
 module.exports = router;

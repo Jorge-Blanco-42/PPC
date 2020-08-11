@@ -2,7 +2,7 @@
     <form #createProductForm="ngForm" (ngSubmit)="onSubmit(createProductForm)">
         <div class="row">
             <div class="column">
-                <h2>Agregar producto</h2>
+                <h2 class="paddingTop">Agregar producto</h2>
             </div>
             <div class="column">
             </div>
@@ -22,11 +22,12 @@
             <div class="column">
                 <p>
                     <span class="imagen">Cargar imagen</span>
-                    <input id="main" type="text" disabled="true"><img class="uploadbtn" src="../../../assets/img/upload.png" (click)="fileInputCo.click()" width="30px">    
+                    <input id="main" type="text" disabled="true" value="{{product.image}}">
+                    <img class="uploadbtn" src="../../../assets/img/upload.png" (click)="fileInputCo.click()" width="30px">    
                     <input #fileInputCo type="file" (change)="productImageFileChange($event)" style="display:none;" />
                 </p>
                 <div *ngIf="product.image">
-                    Vista Previa:<img class="logo" src="{{url+'get-image/'+product.image}}" width="50">
+                    Vista Previa:<img class="logo" src="{{url+'get-imageP/'+product.image}}" width="50">
                 </div>
             </div>
         </div>

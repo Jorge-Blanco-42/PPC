@@ -37,7 +37,7 @@ export class CreateProductComponent implements OnInit {
       response =>{
         if(response.product){          
           //subir imagen
-          this._uploadService.makeFileRequest(Global.url+"upload-image/"+response.product._id,[],this.ImageUpload,'image')
+          this._uploadService.makeFileRequest(Global.url+"upload-image-product/"+response.product._id,[],this.ImageUpload,'image')
           .then((result: any) =>{
             if(result){
               this.status = true;
@@ -63,7 +63,6 @@ export class CreateProductComponent implements OnInit {
 
   productImageFileChange(fileInput: any){
     this.ImageUpload = <Array<File>>fileInput.target.files;
-
   }
 
 
