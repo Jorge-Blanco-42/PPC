@@ -24,7 +24,7 @@ export class CreateProductComponent implements OnInit {
     private _productService: ProductService,
     private _uploadService: UploadService
   ){ 
-    this.product = new Product('','','','');
+    this.product = new Product('','','','','');
     this.sent = false;
     this.url = Global.url;
     this.mainName = "";

@@ -15,6 +15,8 @@ import { DashTestComponent } from './components/dashTest/dashTest.component';
 import { CreateProductComponent } from './components/createProduct/createProduct.component';
 import { EditPaymentsComponent } from './components/edit-payments/edit-payments.component';
 import { RolesComponent } from './components/roles/roles.component';
+import { MantProductsComponent } from './components/mantProducts/mantProducts.component';
+import { DetailProductComponent } from './components/detailProduct/detailProduct.component';
 const routes: Routes = [
   {path: '', component: ContactComponent},
   {path: 'signUp', component: SignUpComponent},
@@ -24,6 +26,8 @@ const routes: Routes = [
   {path: 'productos', component: ProductsComponent},
   {path: 'crear-proyecto', component: CreateComponent},
   {path: 'crear-producto', component: CreateProductComponent},
+  {path: 'mant-productos', component: MantProductsComponent},
+  {path: 'producto/:id', component: DetailProductComponent},
   {path: 'proyecto/:id', component: DetailComponent},
   {path: 'editar-proyecto/:id', component: EditComponent},
   {path: 'info-soda', component: InfoSodaComponent},
