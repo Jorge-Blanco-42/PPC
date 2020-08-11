@@ -10,6 +10,7 @@ var OrderSchema = Schema({
     total: String,
     date: Date,
     state: String,
+    problem: String,
     products : []
 
 });

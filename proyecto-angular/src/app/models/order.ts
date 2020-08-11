@@ -4,6 +4,7 @@ export class Order {
         public total: string,
         public date: Date,
         public state: string,
+        public problem: string,
         public products : []
     ) { }
 }

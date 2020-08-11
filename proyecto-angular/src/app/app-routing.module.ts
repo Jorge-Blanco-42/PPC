@@ -17,6 +17,7 @@ import { EditPaymentsComponent } from './components/edit-payments/edit-payments.
 import { RolesComponent } from './components/roles/roles.component';
 import { ChangeOrderComponent } from './components/change-order/change-order.component';
 import { HistoryComponent } from './components/history/history.component';
+import { ReportComponent } from './components/report/report.component';
 
 const routes: Routes = [
   {path: '', component: ContactComponent},
@@ -36,6 +37,7 @@ const routes: Routes = [
   {path: 'assignRoles', component: RolesComponent},
   {path: 'changeOrder', component: ChangeOrderComponent},
   {path: 'history', component: HistoryComponent},
+  {path: 'report/:id', component: ReportComponent},
   {path: '**', component: ErrorComponent}
 ];
 

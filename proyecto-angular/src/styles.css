@@ -1,3 +1,5 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import '~@angular/cdk/overlay-prebuilt.css';
 /* Importar fuentes custom*/
 @font-face{
 	font-family: "yanone";
@@ -144,6 +146,21 @@ td .deletebutton{
 	margin-bottom: 2%;
 	font-size: medium;
 	font-weight: 700;
+}
+
+.problemButton{
+	display: inline-block;
+	background-color: #E42C2B;
+	border: 0px solid #181818;
+	padding: 2%;
+	width: 15%;
+	height: 70%;
+	font-family: "United Sans Bold";
+	border-radius: 5px;
+	color: white;
+	margin-left: 40%;
+	font-size: large;
+	text-align: center;
 }
 /*Barra de navegacion / cabecera*/
 
@@ -426,7 +443,31 @@ form label{
 	width: 15%;
 	text-align: left;
 }
+.middleCancel{
+		font-family: "united sans bold";
+		display: inline;
+		font-size: 17px;
+		margin-left: 38%;
+		padding: 10px;
+		color:#181818;
+		background: white;
+		border-radius: 10px;
+		border: 1px solid #181818;
+		cursor: pointer;
+}
+textarea{
+	height: fit-content; 
+	width: 40%;
+	min-height: 20px;
+}
 
+.bigLabel{
+	display: inline-block;
+	width: 40%;
+	text-align: right;
+	vertical-align: top;
+	padding-right: 2%;
+}
 .media{
 	vertical-align: middle;
 	margin-right: 5px;

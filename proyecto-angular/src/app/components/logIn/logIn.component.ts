@@ -7,7 +7,7 @@ import { UserService } from '../../services/user.service';
 import { Router, ActivatedRoute, Params} from '@angular/router';
 import { UploadService } from '../../services/upload.service';
 import { SafePipe } from '../../pipes/Safe.pipe';
-
+import { SHA256, enc } from "crypto-js";
 
 @Component({
   selector: 'LogIn',
@@ -34,16 +34,18 @@ export class LogInComponent implements OnInit {
   }
 
   onSubmit(form){
-    this._userService.getUser(this.userLog.username,this.userLog.password).subscribe(
+    let encript = SHA256(this.userLog.password).toString(enc.Hex);
+    this.user.password = encript;
+    this._userService.getUser(this.userLog.username,encript).subscribe(
       response => {
         if (response.user) {  
           this.srvLogin.isloggedin = true;  
           console.log(this.srvLogin.isloggedin); 
+          this.user = response.user;
           this.cookieService.set("user", JSON.stringify(this.user)); 
           this.router.navigate(['/dashboard']); 
-          
       } 
-        this.user = response.user;
+        
       },
       error => {
         console.log(error);

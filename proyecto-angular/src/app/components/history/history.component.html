@@ -1,0 +1,19 @@
+<div class="container">
+    <h2>Asignar roles</h2>
+    <table class="paymentsTD">
+        <tr>
+            <th>Número de orden</th>
+            <th>Monto total</th>
+            <th>Fecha</th>
+            <th>Reportar problema</th>
+        </tr>
+        <tr *ngFor="let orderx of orders; let i = index">
+            <td>{{orderx.number}}</td>
+            <td>{{orderx.total}}</td>
+            <td>{{orderx.date}}</td>
+            <td><button type="button" class="problemButton" (click)="openDialog(orders[i])">!</button></td>
+        </tr>
+    </table>
+    <br>
+    <button type="button" class="cancelButton" [routerLink]="['/productos']" [routerLinkActive]="['actived']" style="margin-left: 50%;">Volver</button>
+</div>

@@ -1,4 +1,5 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule} from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
@@ -25,7 +26,10 @@ import { CreateProductComponent } from './components/createProduct/createProduct
 import { EditPaymentsComponent } from './components/edit-payments/edit-payments.component';
 import { RolesComponent } from './components/roles/roles.component';
 import { ChangeOrderComponent } from './components/change-order/change-order.component';
-import { HistoryComponent } from './components/history/history.component'
+import { HistoryComponent } from './components/history/history.component';
+import { ReportComponent } from './components/report/report.component';
+import {MatNativeDateModule} from '@angular/material/core';
+import { MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule} from '@angular/material/dialog';
 
 
 @NgModule({
@@ -49,16 +53,23 @@ import { HistoryComponent } from './components/history/history.component'
     EditPaymentsComponent,
     RolesComponent,
     ChangeOrderComponent,
-    HistoryComponent
+    HistoryComponent,
+    ReportComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ScrollingModule
+    ScrollingModule,
+    MatDialogModule,
+    BrowserAnimationsModule,
+    MatNativeDateModule
   ],
-  providers: [appRoutingProviders, CookieService],
-  bootstrap: [AppComponent]
+  providers: [appRoutingProviders, CookieService, {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {appearance: 'fill'}}],
+  bootstrap: [AppComponent],
+  entryComponents: [
+    ReportComponent
+  ],
 })
 export class AppModule { }

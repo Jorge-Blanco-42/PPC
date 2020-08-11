@@ -25,7 +25,7 @@ var controller = {
         order.total = params.total;
         order.date = params.date;
         order.product = params.product;
-
+        order.problem = "";
         order.save((err, orderStored) => {
 
             if(err) return res.status(500).send({message: "ERROR AL GUARDAR EL DOCUMENTO"});
