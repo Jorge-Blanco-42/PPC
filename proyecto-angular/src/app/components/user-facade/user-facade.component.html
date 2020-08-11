@@ -1,8 +1,8 @@
 <div *ngIf="data.role === 'Administrador'">
-    <button type="button" class="menuButton" (click)="closeDialog()">EDITAR INFORMACIÓN</button>
-    <button type="button" class="menuButton" (click)="closeDialog()">EDITAR MENÚ</button>
-    <button type="button" class="menuButton" (click)="closeDialog()">ASIGNAR ROLES</button>
-    <button type="button" class="menuButton" (click)="closeDialog()">CAMBIAR ESTADO DE LA ORDEN</button>
+    <button type="button" class="menuButton" (click)="closeDialog()" [routerLink]="['/info-soda']" [routerLinkActive]="['actived']">EDITAR INFORMACIÓN</button>
+    <button type="button" class="menuButton" (click)="closeDialog()" [routerLink]="['/cart']" [routerLinkActive]="['actived']">EDITAR MENÚ</button>
+    <button type="button" class="menuButton" (click)="closeDialog()" [routerLink]="['/assignRoles']" [routerLinkActive]="['actived']">ASIGNAR ROLES</button>
+    <button type="button" class="menuButton" (click)="closeDialog()" [routerLink]="['/changeOrder']" [routerLinkActive]="['actived']">CAMBIAR ESTADO DE LA ORDEN</button>
 </div>
 <div *ngIf="data.role === 'Repartidor'">
     <span>Repartidor</span>

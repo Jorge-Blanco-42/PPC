@@ -28,6 +28,7 @@ export class AppComponent implements OnInit{
 
   openDialog(): void {
     let user = JSON.parse(this._cookieService.get("user"));
+    
     const dialogRef = this.dialog.open(UserFacadeComponent, {
       width: '50%',
       data: {role: user.role}

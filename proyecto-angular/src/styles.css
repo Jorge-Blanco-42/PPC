@@ -163,7 +163,20 @@ td .deletebutton{
 	text-align: center;
 }
 /*Barra de navegacion / cabecera*/
-
+.menuButton{
+	display: block;
+	margin: auto;
+	font-family: "united sans bold";
+	font-size: 17px;
+	padding: 10px;
+	width: 40%;
+	margin-bottom: 1%;
+	color: white;
+	background: #E42C2B;
+	border-radius: 10px;
+	border: 1px solid #E42C2B;
+	cursor: pointer;
+}
 #companyLogo{
 	vertical-align: middle;
 	margin-right: 5px;
