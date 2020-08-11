@@ -53,7 +53,7 @@ export class SignUpComponent implements OnInit {
   }
 
   getUser() {
-    this._userService.getUser("5f2f4d1c7f6f5c6160bd0b41").subscribe(
+    this._userService.getUserByID("5f2f4d1c7f6f5c6160bd0b41").subscribe(
       response => {
         this.user = response.user;
       },

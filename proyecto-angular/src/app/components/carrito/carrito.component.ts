@@ -42,8 +42,9 @@ export class CarritoComponent implements OnInit {
   }
 
   getUser(userID: string) {
-    this._userService.getUser(userID).subscribe(
+    this._userService.getUserByID(userID).subscribe(
       response => {
+        console.log(response);
         this.user = response.user;
       },
       error => {

@@ -34,29 +34,22 @@ export class LogInComponent implements OnInit {
   }
 
   onSubmit(form){
-    //this.srvLogin.user =al user de la base
-    //this.srvLogin.password =al user de la base
-    this.cookieService.set('username', this.userLog.username);  
-    this.cookieService.set('password', this.userLog.password);  
-    console.log(this.cookieService.get('username'));  
-    console.log(this.cookieService.get('password'));  
-    const a = this.userLog;  
-    if (this.srvLogin.checkLogValues(this.userLog)) {  
-        this.srvLogin.isloggedin = true;  
-        console.log(this.srvLogin.isloggedin);  
-        this.router.navigate(['/dashboard']);  
-    } 
-  }
-
-  getUser() {
-    this._userService.getUser("5f2f4d1c7f6f5c6160bd0b41").subscribe(
+    this._userService.getUser(this.userLog.username,this.userLog.password).subscribe(
       response => {
+        if (response.user) {  
+          this.srvLogin.isloggedin = true;  
+          console.log(this.srvLogin.isloggedin); 
+          this.cookieService.set("user", JSON.stringify(this.user)); 
+          this.router.navigate(['/dashboard']); 
+          
+      } 
         this.user = response.user;
       },
       error => {
         console.log(error);
       }
-    );
+    ) ;
+    
   }
 
 }
