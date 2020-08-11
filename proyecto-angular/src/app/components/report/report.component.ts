@@ -1,7 +1,7 @@
-import { Component, OnInit, Inject } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { Order } from '../../models/order';
 import { OrderService } from '../../services/order.service'
+import { Component, OnInit, Inject } from '@angular/core';
 
 export interface DialogData {
   order: Order;

@@ -6,10 +6,8 @@ import { Order } from '../../models/order';
 import { OrderService } from '../../services/order.service';
 import { CookieService } from 'ngx-cookie-service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { SHA256, enc } from "crypto-js";
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { ReportComponent } from '../report/report.component';
-import { BLACK_ON_WHITE_CSS_CLASS } from '@angular/cdk/a11y/high-contrast-mode/high-contrast-mode-detector';
 
 @Component({
   selector: 'app-history',
@@ -45,7 +43,6 @@ export class HistoryComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      this.animal = result;
     });
   }
 

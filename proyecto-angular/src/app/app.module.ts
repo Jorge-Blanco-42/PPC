@@ -30,6 +30,7 @@ import { HistoryComponent } from './components/history/history.component';
 import { ReportComponent } from './components/report/report.component';
 import {MatNativeDateModule} from '@angular/material/core';
 import { MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule} from '@angular/material/dialog';
+import { UserFacadeComponent } from './components/user-facade/user-facade.component';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule} from '@angular/material/di
     RolesComponent,
     ChangeOrderComponent,
     HistoryComponent,
-    ReportComponent
+    ReportComponent,
+    UserFacadeComponent
   ],
   imports: [
     BrowserModule,
@@ -69,7 +71,8 @@ import { MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule} from '@angular/material/di
   providers: [appRoutingProviders, CookieService, {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {appearance: 'fill'}}],
   bootstrap: [AppComponent],
   entryComponents: [
-    ReportComponent
+    ReportComponent,
+    UserFacadeComponent
   ],
 })
 export class AppModule { }

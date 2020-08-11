@@ -9,7 +9,7 @@
                 <p>
                     <label for="email">Correo</label>
                     <input type="email" name="email" #email="ngModel" [(ngModel)]="userLog.username" required>
-                    <span class="form_error" *ngIf="email.touched && !email.valid" [(ngModel)="userLog.username"]><strong>Campo obligatorio</strong></span>
+                    <span class="form_error" *ngIf="email.touched && !email.valid" [(ngModel)]="userLog.username"]><strong>Campo obligatorio</strong></span>
                 </p>
                 <br/>
                 <p>
