@@ -11,7 +11,7 @@ import { EditComponent } from './components/edit/edit.component';
 import { InfoSodaComponent } from './components/info-soda/info-soda.component';
 import { CarritoComponent } from './components/carrito/carrito.component';
 import { EditPaymentsComponent } from './components/edit-payments/edit-payments.component';
-
+import { RolesComponent } from './components/roles/roles.component';
 const routes: Routes = [
   {path: '', component: AboutComponent},
   {path: 'sobre-mi', component: AboutComponent},
@@ -23,6 +23,7 @@ const routes: Routes = [
   {path: 'info-soda', component: InfoSodaComponent},
   {path: 'cart', component: CarritoComponent},
   {path: 'editPayments', component: EditPaymentsComponent},
+  {path: 'assignRoles', component: RolesComponent},
   {path: '**', component: ErrorComponent}
 ];
 

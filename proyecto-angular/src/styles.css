@@ -48,11 +48,8 @@ body{
 	font-weight: 700;
 	color: #444;
 	line-height: 1.3;
-	width: 60%;
 	padding: 2% 2% 2% 2%;
-	max-width: 60%;
 	box-sizing: border-box;
-	margin-left: 15%;
 	margin-right: 8%;
 	margin-top: 2%;
 	margin-bottom: 2%;
@@ -61,6 +58,16 @@ body{
 	border-radius: .5em;
 	-moz-appearance: none;
 	background-color: #fff;
+}
+.bigSelect{
+	width: 80%;
+	max-width: 100%;
+	margin-left: 10%;
+}
+.smallSelect{
+	width: 60%;
+	max-width: 60%;
+	margin-left: 15%;
 }
 .select-css::-ms-expand {
 	display: none;
@@ -86,8 +93,8 @@ table, th, td{
 	
 }
 table{
-	width: 80%;
-	height: 80%;
+	width: 90%;
+	height: 90%;
 	margin: auto;
 }
 th{
@@ -421,9 +428,7 @@ form textarea{
 }
 
 
-.cancelButton{
-	margin-left: auto;
-	margin-right: 5px;	
+.cancelButton{	
 	font-family: "united sans bold";
 	font-size: 17px;
 	padding: 10px;

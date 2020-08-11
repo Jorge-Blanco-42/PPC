@@ -17,7 +17,9 @@ import { DetailComponent } from './components/detail/detail.component';
 import { EditComponent } from './components/edit/edit.component';
 import { InfoSodaComponent } from './components/info-soda/info-soda.component';
 import { CarritoComponent } from './components/carrito/carrito.component';
-import { EditPaymentsComponent } from './components/edit-payments/edit-payments.component'
+import { EditPaymentsComponent } from './components/edit-payments/edit-payments.component';
+import { RolesComponent } from './components/roles/roles.component';
+import { ChangeOrderComponent } from './components/change-order/change-order.component'
 
 
 @NgModule({
@@ -33,7 +35,9 @@ import { EditPaymentsComponent } from './components/edit-payments/edit-payments.
     EditComponent,
     InfoSodaComponent,
     CarritoComponent,
-    EditPaymentsComponent
+    EditPaymentsComponent,
+    RolesComponent,
+    ChangeOrderComponent
   ],
   imports: [
     BrowserModule,

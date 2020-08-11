@@ -21,7 +21,7 @@
                     <input type="text" name="name" #name="ngModel" [(ngModel)]="payment.name" required>
                 </td>
                 <td>
-                    <select id="newState" class="select-css" name="state" #state="ngModel" [(ngModel)]="payment.state">
+                    <select id="newState" class="select-css smallSelect" name="state" #state="ngModel" [(ngModel)]="payment.state">
                         <option value="true">Activado</option>
                         <option value="false">Desactivado</option>
                     </select>
@@ -39,4 +39,5 @@
             </tr>
         </table>
     </form>
+    <button type="button" class="cancelButton" style="margin-left: 50%;">Volver</button>
 </div>
