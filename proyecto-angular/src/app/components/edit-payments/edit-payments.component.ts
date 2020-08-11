@@ -5,7 +5,7 @@ import { PaymentMethod } from '../../models/paymentMethod';
 import { typeWithParameters } from '@angular/compiler/src/render3/util';
 
 @Component({
-  selector: 'app-edit-payments',
+  selector: 'edit-payments',
   templateUrl: './edit-payments.component.html',
   styleUrls: ['./edit-payments.component.css'],
   providers: [PaymentMethodService]

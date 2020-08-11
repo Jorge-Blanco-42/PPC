@@ -6,6 +6,6 @@ export class User{
         public phoneNumber: String,
         public address: String,
         public role: String,
-        public orders:[]
-    ){}
+        public orders: []
+    ){ }
 }
