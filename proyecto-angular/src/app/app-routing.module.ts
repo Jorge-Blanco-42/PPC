@@ -15,6 +15,7 @@ import { CreateProductComponent } from './components/createProduct/createProduct
 import { EditPaymentsComponent } from './components/edit-payments/edit-payments.component';
 import { RolesComponent } from './components/roles/roles.component';
 import { ChangeOrderComponent } from './components/change-order/change-order.component';
+import { HistoryComponent } from './components/history/history.component';
 
 const routes: Routes = [
   {path: '', component: ContactComponent},
@@ -32,6 +33,7 @@ const routes: Routes = [
   {path: 'editPayments', component: EditPaymentsComponent},
   {path: 'assignRoles', component: RolesComponent},
   {path: 'changeOrder', component: ChangeOrderComponent},
+  {path: 'history', component: HistoryComponent},
   {path: '**', component: ErrorComponent}
 ];
 
