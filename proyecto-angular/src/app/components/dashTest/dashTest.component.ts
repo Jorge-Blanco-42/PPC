@@ -3,11 +3,13 @@ import { AuthService, UserLog } from '../../services/authservice.service';
 import { Router, ActivatedRoute } from '@angular/router';  
 import { CookieService } from 'ngx-cookie-service';  
 import { User } from 'src/app/models/user';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'dashTest',
   templateUrl: './dashTest.component.html',
-  styleUrls: ['./dashTest.component.css']
+  styleUrls: ['./dashTest.component.css'],
+  providers: [UserService]
 })
 export class DashTestComponent implements OnInit {
 
@@ -16,7 +18,7 @@ export class DashTestComponent implements OnInit {
     userDisplayName = '';  
     password = ''; 
     public user: User; 
-    constructor(private srvLogin: AuthService, private router: Router, public activatedRoute: ActivatedRoute, private cookieService: CookieService) {  
+    constructor(private srvLogin: AuthService, private router: Router, public activatedRoute: ActivatedRoute, private cookieService: CookieService, private _userService: UserService) {  
         this.userLog = new UserLog();  
         this.user =JSON.parse(this.cookieService.get("user"));
         if (!this.user) {  

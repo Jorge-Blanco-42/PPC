@@ -25,7 +25,7 @@ export class SignUpComponent implements OnInit {
     private _userService: UserService,
     private _uploadService: UploadService
   ){ 
-    this.user = new User('','','','','','cliente',[]);
+    this.user = new User('','','','','','Cliente',[]);
     this.sent = false;
     this.url = Global.url;
     this.encript = "";

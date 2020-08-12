@@ -25,6 +25,7 @@ export class AppComponent implements OnInit{
 
   readonly VAPID_PUBLIC_KEY = "BNZT2ha3_BN2bo4IoTd2qmtHaQem-3CiyvzZNqD3JHeivHyVpCw7QbYkeBka7WTcIQdIlfqkFV43YnYNt-U1qlU";
 
+  public authen : boolean;
   constructor(
     private swPush: SwPush,
     private _pushService: PushService,
@@ -36,6 +37,7 @@ export class AppComponent implements OnInit{
     this.push = new Push("zxc");
     this.url = Global.url;
     this.id ="";
+    this.authen = false;
   }
 
   openDialog(): void {
@@ -62,6 +64,7 @@ export class AppComponent implements OnInit{
   ngOnInit(): void {
     this.getRestaurant();
     this.subscribeToNotifications();
+    this.isAuthen();
   }
   
   getRestaurant() {
@@ -75,5 +78,15 @@ export class AppComponent implements OnInit{
     }
   );
   }
+
+  isAuthen(){
+    let user = JSON.parse(this._cookieService.get("user"));
+    if(user == null){
+      this.authen = false;
+    } else {
+      this.authen = true;
+    }
+  }
+
 }
 
