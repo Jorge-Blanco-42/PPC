@@ -34,5 +34,17 @@ export class ProductsComponent implements OnInit {
       }
     );
   }
-
+  addCart(product){
+    console.log(product);
+    let carrito = JSON.parse(localStorage.getItem("carrito"));
+    if(carrito){
+      carrito.push(product);
+      localStorage.setItem("carrito",JSON.stringify(carrito));
+    }else{
+      carrito = [];
+      carrito.push(carrito.push(product));
+      localStorage.setItem("carrito",JSON.stringify(carrito));
+    }
+    console.log(carrito);
+  }
 }
