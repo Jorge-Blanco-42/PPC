@@ -17,6 +17,7 @@ export class AppComponent implements OnInit{
   public title: string ;
   public restaurant: Restaurant;
   public url: string;
+  public authen : boolean;
   constructor(
     private _restaurantService: RestaurantService,
     public dialog: MatDialog,
@@ -24,6 +25,7 @@ export class AppComponent implements OnInit{
   ) { 
     this.restaurant = new Restaurant("","","","","","","","","","","");
     this.url = Global.url;
+    this.authen = false;
   }
 
   openDialog(): void {
@@ -42,6 +44,7 @@ export class AppComponent implements OnInit{
 
   ngOnInit(): void {
     this.getRestaurant();
+    this.isAuthen();
   }
   
   getRestaurant() {
@@ -55,5 +58,15 @@ export class AppComponent implements OnInit{
     }
   );
   }
+
+  isAuthen(){
+    let user = JSON.parse(this._cookieService.get("user"));
+    if(user == null){
+      this.authen = false;
+    } else {
+      this.authen = true;
+    }
+  }
+
 }
 

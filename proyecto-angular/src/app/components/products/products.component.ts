@@ -20,6 +20,7 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getProducts();
+    this.loadOnce();
   }
 
   getProducts(){
@@ -46,4 +47,18 @@ export class ProductsComponent implements OnInit {
       localStorage.setItem("carrito",JSON.stringify(carrito));
     }
   }
+
+  loadOnce(){
+    if( window.localStorage )
+  {
+    if( !localStorage.getItem('firstLoad') )
+    {
+      localStorage['firstLoad'] = true;
+      window.location.reload();
+    }  
+    else
+      localStorage.removeItem('firstLoad');
+  }
+  }
+
 }

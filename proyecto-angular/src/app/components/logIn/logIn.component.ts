@@ -43,7 +43,7 @@ export class LogInComponent implements OnInit {
           console.log(this.srvLogin.isloggedin); 
           this.user = response.user;
           this.cookieService.set("user", JSON.stringify(this.user)); 
-          this.router.navigate(['/dashboard']); 
+          this.router.navigate(['/productos']); 
       } 
         
       },

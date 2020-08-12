@@ -74,5 +74,9 @@ export class DetailUserComponent implements OnInit {
 
   }
 
+  logout(): void {  
+    this._router.navigate(['/productos']);  
+    this.cookieService.deleteAll();  
+}  
 
 }
