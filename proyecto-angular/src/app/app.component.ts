@@ -5,24 +5,34 @@ import { Global } from './services/global';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { UserFacadeComponent } from './components/user-facade/user-facade.component';
 import { CookieService } from 'ngx-cookie-service';  
+import { SwPush } from '@angular/service-worker';
+import { PushService } from './services/push.service';
+import { Push } from './models/push';
 
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [RestaurantService]
+  providers: [RestaurantService, PushService]
 })
 export class AppComponent implements OnInit{
   public title: string ;
   public restaurant: Restaurant;
   public url: string;
+  public push: Push;
+
+  readonly VAPID_PUBLIC_KEY = "BNZT2ha3_BN2bo4IoTd2qmtHaQem-3CiyvzZNqD3JHeivHyVpCw7QbYkeBka7WTcIQdIlfqkFV43YnYNt-U1qlU";
+
   constructor(
+    private swPush: SwPush,
+    private _pushService: PushService,
     private _restaurantService: RestaurantService,
     public dialog: MatDialog,
     private _cookieService: CookieService
   ) { 
     this.restaurant = new Restaurant("","","","","","","","","","","");
+    this.push = new Push("zxc");
     this.url = Global.url;
   }
 
@@ -39,9 +49,27 @@ export class AppComponent implements OnInit{
     });
   }
 
+  subscribeToNotifications() {
+    this._pushService.savePush(this.push).subscribe(
+      response =>{
+        console.log(response);
+      },
+      err =>{
+        console.log(err);
+
+      }
+      
+    );
+    /*this.swPush.requestSubscription({
+        serverPublicKey: this.VAPID_PUBLIC_KEY
+    })
+    .then(sub => console.log(sub))
+    .catch(err => console.error("Could not subscribe to notifications", err));*/
+}
 
   ngOnInit(): void {
     this.getRestaurant();
+    this.subscribeToNotifications();
   }
   
   getRestaurant() {

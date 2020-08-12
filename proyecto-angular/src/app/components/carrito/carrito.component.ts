@@ -44,6 +44,7 @@ export class CarritoComponent implements OnInit {
   ) {
     this.url = Global.url;
     this.user = new User("", "", "", "", "", "", []);
+    this.order = new Order("","",new Date(), "","","",[]);
     this.payment = new PaymentMethod("", false);
     this.enviado = false;
     this.suma = 0;
@@ -66,7 +67,7 @@ export class CarritoComponent implements OnInit {
         this.suma += number;
       }
     }
-    this.total = this.suma + this.envio
+    this.total = this.suma + this.envio;
   }
 
   getOrders() {
@@ -122,7 +123,20 @@ export class CarritoComponent implements OnInit {
     this.order.number = (this.orderNumber+1).toString();
     this.order.payment = this.pay;
     this.order.problem = "";
-    this.enviado = true;
+    this.order.products = this.carrito;
+    console.log(this.order.products);
+    this.order.state = "Preparando";
+    this.order.total = this.total.toString();
+    this._orderService.saveOrder(this.order).subscribe(
+      response => {
+        this.enviado = true;
+        localStorage.removeItem("carrito");
+      },
+      error => {
+        console.log(error);
+      }
+    );
+    
   }
   removeProduct(product) {
     const index = this.carrito.indexOf(product, 0);

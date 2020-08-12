@@ -93,8 +93,8 @@
             </div>
             <div class="column">
                 <label class="centerlabel" for="pay">Método de pago</label>
-                <select name="pay" id="payMethods"  value="{{pay}}">
-                    <option *ngFor="let payment of payments">{{payment.name}}</option>
+                <select class="select-css bigSelect" name="sel" #sel="ngModel" [(ngModel)]="pay">
+                    <option value="{{payment.name}}" *ngFor="let payment of payments">{{payment.name}}</option>
                 </select>
             </div>
 

@@ -33,7 +33,8 @@ import { ReportComponent } from './components/report/report.component';
 import {MatNativeDateModule} from '@angular/material/core';
 import { MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule} from '@angular/material/dialog';
 import { UserFacadeComponent } from './components/user-facade/user-facade.component';
-
+import { ServiceWorkerModule } from '@angular/service-worker/';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { UserFacadeComponent } from './components/user-facade/user-facade.compon
     ScrollingModule,
     MatDialogModule,
     BrowserAnimationsModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [appRoutingProviders, CookieService, {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {appearance: 'fill'}}],
   bootstrap: [AppComponent],
