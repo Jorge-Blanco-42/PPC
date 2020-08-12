@@ -29,7 +29,7 @@ export class EditProductComponent implements OnInit {
     private _router: Router,
     private _route: ActivatedRoute
   ) {
-    this.title = 'Editar proyecto';
+    this.title = 'Editar producto';
     this.sent = false;
     this.url = Global.url;
   }

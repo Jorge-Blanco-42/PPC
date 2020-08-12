@@ -34,6 +34,7 @@ import { ReportComponent } from './components/report/report.component';
 import {MatNativeDateModule} from '@angular/material/core';
 import { MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule} from '@angular/material/dialog';
 import { UserFacadeComponent } from './components/user-facade/user-facade.component';
+import { DetailUserComponent } from './components/detail-user/detail-user.component';
 
 
 @NgModule({
@@ -62,7 +63,8 @@ import { UserFacadeComponent } from './components/user-facade/user-facade.compon
     ChangeOrderComponent,
     HistoryComponent,
     ReportComponent,
-    UserFacadeComponent
+    UserFacadeComponent,
+    DetailUserComponent
   ],
   imports: [
     BrowserModule,
