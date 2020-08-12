@@ -50,21 +50,11 @@ export class AppComponent implements OnInit{
   }
 
   subscribeToNotifications() {
-    this._pushService.savePush(this.push).subscribe(
-      response =>{
-        console.log(response);
-      },
-      err =>{
-        console.log(err);
-
-      }
-      
-    );
-    /*this.swPush.requestSubscription({
+    this.swPush.requestSubscription({
         serverPublicKey: this.VAPID_PUBLIC_KEY
     })
-    .then(sub => console.log(sub))
-    .catch(err => console.error("Could not subscribe to notifications", err));*/
+    .then(sub => this._pushService.savePush(new Push(JSON.stringify(sub))).subscribe())
+    .catch(err => console.error("Could not subscribe to notifications", err));
 }
 
   ngOnInit(): void {

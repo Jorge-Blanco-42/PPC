@@ -1,6 +1,9 @@
 'use strict'
 
 var Order = require('../models/order');
+var push = require('../controllers/push');
+const router = require('../routes/push');
+const axios = require('axios');
 
 var controller = {
     home : function (req, res){
@@ -83,7 +86,12 @@ var controller = {
             if(!orderUpdated) return res.status(404).send({
                 message: "La orden no existe"
             });
-
+            axios.post('http://localhost:3700/api/notify')
+            .then((res) => {
+            })
+            .catch((error) => {
+              console.error(error)
+            })
             return res.status(200).send({
                 orderUpdated: orderUpdated
             });
