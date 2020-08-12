@@ -11,7 +11,8 @@ import { CookieService } from 'ngx-cookie-service';
 @Component({
   selector: 'detail-user',
   templateUrl: './detail-user.component.html',
-  styleUrls: ['./detail-user.component.css']
+  styleUrls: ['./detail-user.component.css'],
+  providers: [UserService, UploadService]
 })
 export class DetailUserComponent implements OnInit {
   public title: string;
@@ -40,15 +41,7 @@ export class DetailUserComponent implements OnInit {
   }
 
   getUser() {
-    this.userLog = JSON.parse(this.cookieService.get("user"));
-    this._userService.getUser(this.userLog.username, this.userLog.password).subscribe(
-      response => {
-        this.user = response.user;
-      },
-      error => {
-        console.log(error);
-      }
-    );
+    this.user = JSON.parse(this.cookieService.get("user"));
   }
 
   onSubmit(form) {
