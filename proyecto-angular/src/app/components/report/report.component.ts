@@ -21,7 +21,7 @@ export class ReportComponent implements OnInit {
     private _orderService: OrderService,
     public dialogRef: MatDialogRef<ReportComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData) {
-      this.order = new Order("","",new Date(),"","",[]);
+      this.order = new Order("","",new Date(),"","","",[]);
     }
 
   closeDialog(): void {

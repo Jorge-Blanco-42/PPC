@@ -15,15 +15,52 @@
         </div>
         <div class="row">
             <div class="column">
-                <cdk-virtual-scroll-viewport itemSize="50" class="orderviewport">
-                    <div>aquí van los productos we</div>
+                <cdk-virtual-scroll-viewport itemSize="50" class="orderviewport" >
+                    <div *ngFor="let product of carrito" >
+                        <div class="row">
+                            <div class="column">
+                                {{product.name}}
+                            </div>
+                            <div class="column" style="text-align: right;">
+                                {{product.price}}
+                                <button *ngIf="product.price" type="button" class="problemButton" (click)="removeProduct(product)">X</button>
+                            </div>
+                        </div> 
+                    </div>
                 </cdk-virtual-scroll-viewport>
-
-                <span class="carritoM">Subtotal</span><br>
-                <span class="carritoM">Envio</span><br>
-                <span class="carritoM">Total</span><br>
-
-
+                <div class="row">
+                    <div class="column">
+                        <span class="carritoM">Subtotal</span>
+                    </div>
+                    
+                    <div class="column" style="text-align: right;">
+                        <span>{{suma}}</span>
+                    </div>
+                    <br>
+                </div> 
+                <div class="row">
+                    <div class="column">
+                        <span class="carritoM">Envio</span><br>
+                    </div>
+                    
+                    <div class="column" style="text-align: right;">
+                        <span>{{envio}}</span>
+                    </div>
+                    <br>
+                </div> 
+                <div class="row">
+                    <div class="column">
+                        <span class="carritoM">Total</span><br>
+                    </div>
+                    
+                    <div class="column" style="text-align: right;">
+                        <span><strong>{{total}}</strong></span>
+                    </div>
+                    <br>
+                </div> 
+                
+                
+                
             </div>
             <div class="column">
                 <p>
@@ -39,7 +76,7 @@
                     <br /><br />
                     <label class="centerlabel" for="correo">Correo</label>
                     <input class="largerInput" type="email" name="correo" #correo="ngModel"
-                        [(ngModel)]="user.phoneNumber" required>
+                        [(ngModel)]="user.email" required>
                     <span class="form_error" *ngIf="correo.touched && !correo.valid"><strong>Campo
                             obligatorio</strong></span>
                     <br /><br />
@@ -56,7 +93,7 @@
             </div>
             <div class="column">
                 <label class="centerlabel" for="pay">Método de pago</label>
-                <select name="pay" id="payMethods">
+                <select name="pay" id="payMethods"  value="{{pay}}">
                     <option *ngFor="let payment of payments">{{payment.name}}</option>
                 </select>
             </div>
@@ -75,14 +112,14 @@
 
         </div>
         <div *ngIf="!enviado" class="row">
-            <button class="cancelButton" [routerLink]="['/proyectos']">CANCELAR</button>
+            <button class="cancelButton" [routerLink]="['/products']">CANCELAR</button>
             <input class="submitbtn" type="submit" value="Guardar" [disabled]="!userInfoForm.form.valid">
         </div>
         <div *ngIf="enviado" class="row">
             <h2>¡Estamos preparando tu pedido!</h2>
         </div>
         <div *ngIf="enviado" class="row">
-            <button class="cancelButton" [routerLink]="['/proyectos']" style="margin: auto;">Volver</button>
+            <button class="cancelButton" [routerLink]="['/products']" style="margin: auto;">Volver</button>
         </div>
     </form>
 </div>

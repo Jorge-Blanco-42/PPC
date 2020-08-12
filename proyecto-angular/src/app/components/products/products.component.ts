@@ -42,9 +42,8 @@ export class ProductsComponent implements OnInit {
       localStorage.setItem("carrito",JSON.stringify(carrito));
     }else{
       carrito = [];
-      carrito.push(carrito.push(product));
+      carrito.push(product);
       localStorage.setItem("carrito",JSON.stringify(carrito));
     }
-    console.log(carrito);
   }
 }

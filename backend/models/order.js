@@ -11,6 +11,7 @@ var OrderSchema = Schema({
     date: Date,
     state: String,
     problem: String,
+    payment: String,
     products : []
 
 });
