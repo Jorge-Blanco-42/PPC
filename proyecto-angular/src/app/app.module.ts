@@ -15,6 +15,7 @@ import { ContactComponent} from './components/contact/contact.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { MantProductsComponent } from './components/mantProducts/mantProducts.component';
 import { DetailProductComponent } from './components/detailProduct/detailProduct.component';
+import { EditProductComponent } from './components/editProduct/editProduct.component';
 import { CreateComponent } from './components/create/create.component';
 import { ErrorComponent } from './components/error/error.component';
 import { DetailComponent } from './components/detail/detail.component';
@@ -40,6 +41,7 @@ import { ChangeOrderComponent } from './components/change-order/change-order.com
     ProjectsComponent,
     MantProductsComponent,
     DetailProductComponent,
+    EditProductComponent,
     CreateComponent,
     ErrorComponent,
     DetailComponent,

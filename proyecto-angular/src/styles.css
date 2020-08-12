@@ -176,11 +176,36 @@ td .deletebutton{
 	padding: 3%;
 	border-radius: 10px;
 	color: white;
-	width: 50%;
+	width: 20%;
 	margin-bottom: 2%;
 	font-size: medium;
 	font-weight: 700;
 }
+
+.editOneProductButton{
+	background-color: #FCBA0C;
+	border: 0px solid #181818;
+	padding: 3%;
+	border-radius: 10px;
+	color: white;
+	width: 20%;
+	margin-bottom: 2%;
+	font-size: medium;
+	font-weight: 700;
+}
+
+.cancelProductButton{
+	background-color: white;
+	border: 1px solid #181818;
+	padding: 3%;
+	border-radius: 10px;
+	color: #181818;
+	width: 20%;
+	margin-bottom: 2%;
+	font-size: medium;
+	font-weight: 700;
+}
+
 
 /*Barra de navegacion / cabecera*/
 
@@ -409,6 +434,13 @@ article.about{
 	float: left;
 	width: 48%;
 	margin-left:30px;
+}
+
+.container .dataDetailProduct{
+	float: left;
+	width: 48%;
+	margin-left:30px;
+	margin-top: 5%;
 }
 
 .container h2{

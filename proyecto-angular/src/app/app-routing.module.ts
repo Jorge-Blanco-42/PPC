@@ -17,6 +17,8 @@ import { EditPaymentsComponent } from './components/edit-payments/edit-payments.
 import { RolesComponent } from './components/roles/roles.component';
 import { MantProductsComponent } from './components/mantProducts/mantProducts.component';
 import { DetailProductComponent } from './components/detailProduct/detailProduct.component';
+import { EditProductComponent } from './components/editProduct/editProduct.component';
+
 const routes: Routes = [
   {path: '', component: ContactComponent},
   {path: 'signUp', component: SignUpComponent},
@@ -29,6 +31,7 @@ const routes: Routes = [
   {path: 'mant-productos', component: MantProductsComponent},
   {path: 'producto/:id', component: DetailProductComponent},
   {path: 'proyecto/:id', component: DetailComponent},
+  {path: 'editar-producto/:id', component: EditProductComponent},
   {path: 'editar-proyecto/:id', component: EditComponent},
   {path: 'info-soda', component: InfoSodaComponent},
   {path: 'cart', component: CarritoComponent},
