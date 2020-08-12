@@ -15,7 +15,7 @@ export class ChangeOrderComponent implements OnInit {
   constructor(
     private _orderService: OrderService
   ) { 
-    this.order = new Order("","",new Date(),"","",[]);
+    this.order = new Order("","",new Date(),"","","",[]);
     this.add=false;
     this.sent=false;
   }
@@ -30,7 +30,6 @@ export class ChangeOrderComponent implements OnInit {
       response => {
         
         if (response.orders) {
-          console.log("xd");
           this.orders = response.orders;
         }
       },

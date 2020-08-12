@@ -31,7 +31,7 @@ export class HistoryComponent implements OnInit {
     public dialog: MatDialog
   ) {
     this.user = new User("", "", "", "", "", "", []);
-    this.order = new Order("", "", new Date(), "","", []);
+    this.order = new Order("", "", new Date(), "","", "", []);
     this.orders = [];
   }
 

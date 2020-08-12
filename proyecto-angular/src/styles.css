@@ -492,8 +492,9 @@ article.about{
 
 .orderviewport{
 	height: 150px;
-	width: 200px;
+	width: 60%;
 	margin: auto;
+	border-bottom: 1px solid #181818;
 }
 .carritoM{
 	padding-left: 22%;
