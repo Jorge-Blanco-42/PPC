@@ -40,22 +40,21 @@ var controller = {
        
     },
 
-    getUserByID(req, res){
+    getUserByID: function(req, res){
         var userID = req.params.id;
+        User.findById(userID, (err, user) =>{
+            if(err) return res.status(500).send({
+                message: "Error a devolver los datos"
+            });
 
-        if(userID === null) res.status(404).send({message : "El usuario no existe"});
+            if(!user) return res.status(404).send({
+                message: "El proyecto no existe"
+            });
 
-        User.findById(userID, (err, user) => {
-
-            if(err) return res.status(500).send({message : "Error al obtener de la base"});
-            if (!user) return res.status(404).send({message : "El Usuario no existe"});
-            
-            return res.status(200).send(
+            return res.status(200).send({
                 user
-            );
+            })
         });
-
-
     },
     
     getUser(req, res){
@@ -72,7 +71,9 @@ var controller = {
                 message : "El usuario no existe"
             });
 
-            return res.status(200).send({user : user});
+            return res.status(200).send({
+                user
+            });
         })
     },
 

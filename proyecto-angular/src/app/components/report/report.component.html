@@ -1,0 +1,24 @@
+<form id="problemaForm" #problemaForm="ngForm" (ngSubmit)="onSubmit(problemaForm)">
+    <div class="paddingTop">
+        <h2 class="tituloCentrado">Reportar un problema</h2><br />
+    </div>
+    <p>
+        <label class="bigLabel" for="problema" style="vertical-align: middle;">¿Qué inconveniente se ha
+            presentado?</label>
+        <select class="select-css" name="problema" #problema="ngModel" [(ngModel)]="problem"
+            placeholder="Seleccione una opción" required>
+            <option value="No llegó">Mi orden no llegó</option>
+            <option value="Orden equivocada">Llego una orden equivocada</option>
+            <option value="Orden incompleta">Mi orden está incompleta</option>
+        </select>
+        <span class="form_error" *ngIf="problema.touched && !problema.valid" [(ngModel)]="problem"><strong>Campo
+                obligatorio</strong></span>
+        <br>
+        <label class="bigLabel" for="description">Descripción</label>
+        <textarea type="text" name="description" #password="ngModel" [(ngModel)]="description" required></textarea>
+        <br>
+
+
+    </p>
+    <button class="middleCancel" (click)="closeDialog()">CANCELAR</button>
+    <input class="submitbtn" type="submit" value="Guardar" [disabled]="!problemaForm.form.valid">

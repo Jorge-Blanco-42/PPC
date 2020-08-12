@@ -2,6 +2,9 @@ import { Component, ViewEncapsulation, ViewChild, ElementRef, SecurityContext, P
 import { Restaurant } from './models/restaurant';
 import { RestaurantService } from './services/restaurant.service';
 import { Global } from './services/global';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { UserFacadeComponent } from './components/user-facade/user-facade.component';
+import { CookieService } from 'ngx-cookie-service';  
 
 
 @Component({
@@ -15,11 +18,28 @@ export class AppComponent implements OnInit{
   public restaurant: Restaurant;
   public url: string;
   constructor(
-    private _restaurantService: RestaurantService
+    private _restaurantService: RestaurantService,
+    public dialog: MatDialog,
+    private _cookieService: CookieService
   ) { 
     this.restaurant = new Restaurant("","","","","","","","","","","");
     this.url = Global.url;
   }
+
+  openDialog(): void {
+    let user = JSON.parse(this._cookieService.get("user"));
+    
+    const dialogRef = this.dialog.open(UserFacadeComponent, {
+      width: '50%',
+      data: {role: user.role}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
+
+
   ngOnInit(): void {
     this.getRestaurant();
   }

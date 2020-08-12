@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { Global } from 'src/app/services/global';
 import { User } from '../../models/user';
-import { getMultipleValuesInSingleSelectionError } from '@angular/cdk/collections';
 
 @Component({
   selector: 'app-roles',
@@ -52,8 +51,5 @@ export class RolesComponent implements OnInit {
       }
 
     );
-  }
-  deleteUser(user){
-
   }
 }

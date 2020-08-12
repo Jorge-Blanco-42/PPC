@@ -15,6 +15,10 @@ import { DashTestComponent } from './components/dashTest/dashTest.component';
 import { CreateProductComponent } from './components/createProduct/createProduct.component';
 import { EditPaymentsComponent } from './components/edit-payments/edit-payments.component';
 import { RolesComponent } from './components/roles/roles.component';
+import { ChangeOrderComponent } from './components/change-order/change-order.component';
+import { HistoryComponent } from './components/history/history.component';
+import { ReportComponent } from './components/report/report.component';
+
 import { MantProductsComponent } from './components/mantProducts/mantProducts.component';
 import { DetailProductComponent } from './components/detailProduct/detailProduct.component';
 import { EditProductComponent } from './components/editProduct/editProduct.component';
@@ -38,6 +42,9 @@ const routes: Routes = [
   {path: 'dashboard', component: DashTestComponent},
   {path: 'editPayments', component: EditPaymentsComponent},
   {path: 'assignRoles', component: RolesComponent},
+  {path: 'changeOrder', component: ChangeOrderComponent},
+  {path: 'history', component: HistoryComponent},
+  {path: 'report/:id', component: ReportComponent},
   {path: '**', component: ErrorComponent}
 ];
 

@@ -23,9 +23,14 @@ export class UserService{
         return this._http.post(this.url+'save-user',params,{headers:headers});
     }
 
-    getUser(id: string): Observable<any>{
+    getUserByID(id: string): Observable<any>{
         let headers = new HttpHeaders().set('Content-Type', 'application/json');
-        return this._http.get(this.url+'get-user/'+id,{headers:headers});
+        return this._http.get(this.url+'get-user-id/'+id,{headers:headers});
+    }
+
+    getUser(email: string, password: string): Observable<any>{
+        let headers = new HttpHeaders().set('Content-Type', 'application/json');
+        return this._http.get(this.url+'get-user/'+email+'/'+password,{headers:headers});
     }
 
     getUsers(): Observable<any>{
