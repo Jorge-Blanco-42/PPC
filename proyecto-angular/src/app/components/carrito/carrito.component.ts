@@ -120,7 +120,8 @@ export class CarritoComponent implements OnInit {
   }
   onSubmit(form) {
     this.order.number = (this.orderNumber+1).toString();
-    this.order.payment = "";
+    this.order.payment = this.pay;
+    this.order.problem = "";
     this.enviado = true;
   }
   removeProduct(product) {
