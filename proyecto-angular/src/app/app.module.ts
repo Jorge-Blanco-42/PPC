@@ -16,6 +16,7 @@ import { ContactComponent} from './components/contact/contact.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { MantProductsComponent } from './components/mantProducts/mantProducts.component';
 import { DetailProductComponent } from './components/detailProduct/detailProduct.component';
+import { EditProductComponent } from './components/editProduct/editProduct.component';
 import { CreateComponent } from './components/create/create.component';
 import { ErrorComponent } from './components/error/error.component';
 import { DetailComponent } from './components/detail/detail.component';
@@ -35,6 +36,8 @@ import { MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule} from '@angular/material/di
 import { UserFacadeComponent } from './components/user-facade/user-facade.component';
 import { ServiceWorkerModule } from '@angular/service-worker/';
 import { environment } from 'src/environments/environment';
+import { DetailUserComponent } from './components/detail-user/detail-user.component';
+
 
 @NgModule({
   declarations: [
@@ -47,6 +50,7 @@ import { environment } from 'src/environments/environment';
     ProjectsComponent,
     MantProductsComponent,
     DetailProductComponent,
+    EditProductComponent,
     CreateComponent,
     ErrorComponent,
     DetailComponent,
@@ -61,7 +65,8 @@ import { environment } from 'src/environments/environment';
     ChangeOrderComponent,
     HistoryComponent,
     ReportComponent,
-    UserFacadeComponent
+    UserFacadeComponent,
+    DetailUserComponent
   ],
   imports: [
     BrowserModule,

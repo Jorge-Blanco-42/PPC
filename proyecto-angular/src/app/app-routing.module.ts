@@ -18,9 +18,11 @@ import { RolesComponent } from './components/roles/roles.component';
 import { ChangeOrderComponent } from './components/change-order/change-order.component';
 import { HistoryComponent } from './components/history/history.component';
 import { ReportComponent } from './components/report/report.component';
-
+import { DetailUserComponent } from './components/detail-user/detail-user.component';
 import { MantProductsComponent } from './components/mantProducts/mantProducts.component';
 import { DetailProductComponent } from './components/detailProduct/detailProduct.component';
+import { EditProductComponent } from './components/editProduct/editProduct.component';
+
 const routes: Routes = [
   {path: '', component: ContactComponent},
   {path: 'signUp', component: SignUpComponent},
@@ -33,8 +35,10 @@ const routes: Routes = [
   {path: 'mant-productos', component: MantProductsComponent},
   {path: 'producto/:id', component: DetailProductComponent},
   {path: 'proyecto/:id', component: DetailComponent},
+  {path: 'editar-producto/:id', component: EditProductComponent},
   {path: 'editar-proyecto/:id', component: EditComponent},
   {path: 'info-soda', component: InfoSodaComponent},
+  {path: 'detail-user', component: DetailUserComponent},
   {path: 'cart', component: CarritoComponent},
   {path: 'dashboard', component: DashTestComponent},
   {path: 'editPayments', component: EditPaymentsComponent},

@@ -2,13 +2,14 @@
     <div class="image">
         <img src="{{url+'get-image/'+product.image}}" *ngIf="product.image">
     </div>
-    <div class="data">
-        <h1>Proyecto: {{product.name}}</h1>
-        <h2>{{product.description}}</h2>
-        <p>{{product.price}}</p>
+    <div class="dataDetailProduct">
+        <h2>Producto: {{product.name}}</h2><br/>
+        <h1>Descripción: {{product.description}}</h1><br/>
+        <p>Precio: {{product.price}} colones</p><br/>
         <p *ngIf="!confirm">
-            <a [routerLink]='["/editar-producto", product._id]' class="button-edit">Editar</a>
-            <a class="button-delete" (click)="setConfirm(true)">Borrar</a>
+            <button [routerLink]='["/editar-producto", product._id]' class="editOneProductButton">EDITAR</button><br/>
+            <button class="deleteProductButton" (click)="setConfirm(true)">BORRAR</button><br/>
+            <button [routerLink]='["/mant-productos"]' class="cancelProductButton">CANCELAR</button><br/>
         </p>
 
         <p *ngIf="confirm">
