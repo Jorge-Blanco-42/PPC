@@ -35,7 +35,7 @@ const routes: Routes = [
   {path: 'proyecto/:id', component: DetailComponent},
   {path: 'editar-proyecto/:id', component: EditComponent},
   {path: 'info-soda', component: InfoSodaComponent},
-  {path: 'cart', component: CarritoComponent},
+  {path: 'cart/:id', component: CarritoComponent},
   {path: 'dashboard', component: DashTestComponent},
   {path: 'editPayments', component: EditPaymentsComponent},
   {path: 'assignRoles', component: RolesComponent},

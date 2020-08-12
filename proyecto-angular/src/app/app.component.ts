@@ -21,6 +21,7 @@ export class AppComponent implements OnInit{
   public restaurant: Restaurant;
   public url: string;
   public push: Push;
+  public id: string;
 
   readonly VAPID_PUBLIC_KEY = "BNZT2ha3_BN2bo4IoTd2qmtHaQem-3CiyvzZNqD3JHeivHyVpCw7QbYkeBka7WTcIQdIlfqkFV43YnYNt-U1qlU";
 
@@ -34,6 +35,7 @@ export class AppComponent implements OnInit{
     this.restaurant = new Restaurant("","","","","","","","","","","");
     this.push = new Push("zxc");
     this.url = Global.url;
+    this.id ="";
   }
 
   openDialog(): void {

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { User } from '../../models/user';
 import { UserService } from '../../services/user.service';
 import { PaymentMethodService } from '../../services/paymentMethod.service';
@@ -23,6 +23,7 @@ export class CarritoComponent implements OnInit {
 
   public user: User;
   public order: Order;
+  public tempOrder: Order;
   public orderNumber: number;
   public payments: Array<PaymentMethod>;
   public payment: PaymentMethod;
@@ -34,33 +35,52 @@ export class CarritoComponent implements OnInit {
   public suma: number;
   public envio: number;
   public total: number;
-  
+
   constructor(
     private _orderService: OrderService,
     private _userService: UserService,
     private _paymentMethodService: PaymentMethodService,
     private _restaurantService: RestaurantService,
-    private _cookieService: CookieService
+    private _cookieService: CookieService,
+    private _router: Router,
+    private _route: ActivatedRoute
   ) {
     this.url = Global.url;
+    this.carrito = []
     this.user = new User("", "", "", "", "", "", []);
-    this.order = new Order("","",new Date(), "","","",[]);
+    this.order = new Order("", "", new Date(), "", "", "", []);
+    this.tempOrder = new Order("", "", new Date(), "", "", "", []);
     this.payment = new PaymentMethod("", false);
     this.enviado = false;
     this.suma = 0;
     this.envio = 1600;
     this.pay = "";
   }
-  
+
   ngOnInit(): void {
     this.getPayments();
+    this._route.params.subscribe(params => {
+      let id = params.id;
+      if (id) {
+        this.getOrder(id);
+        
+        console.log(this.tempOrder);
+        console.log(this.carrito);
+        
+        this.enviado = true;
+      }else{
+        this.carrito = JSON.parse(localStorage.getItem("carrito"));
+      }
+
+
+    });
     this.getOrders();
     let usuario = JSON.parse(this._cookieService.get("user"));
-    if(usuario){
+    if (usuario) {
       this.user = usuario;
     }
     this.getRestaurant();
-    this.carrito = JSON.parse(localStorage.getItem("carrito"));
+    
     for (let i = 0; i < this.carrito.length; i++) {
       if (this.carrito[i].price) {
         let number: number = +this.carrito[i].price;
@@ -71,10 +91,10 @@ export class CarritoComponent implements OnInit {
   }
 
   getOrders() {
-    
+
     this._orderService.getOrders().subscribe(
       response => {
-        
+
         if (response.orders) {
           this.orderNumber = response.orders.length;
           console.log(this.orderNumber);
@@ -96,7 +116,25 @@ export class CarritoComponent implements OnInit {
       }
     );
   }
-
+  getOrder(orderID: string) {
+    this._orderService.getOrder(orderID).subscribe(
+      response => {
+        this.tempOrder = response.order;
+        console.log(this.tempOrder);
+        this.carrito = this.tempOrder.products;
+        for (let i = 0; i < this.carrito.length; i++) {
+          if (this.carrito[i].price) {
+            let number: number = +this.carrito[i].price;
+            this.suma += number;
+          }
+        }
+        this.total = this.suma + this.envio;
+      },
+      error => {
+        console.log(error);
+      }
+    );
+  }
   getRestaurant() {
     this._restaurantService.getRestaurant("5f2d75dccf9f4e41dcfe03ca").subscribe(
       response => {
@@ -120,7 +158,7 @@ export class CarritoComponent implements OnInit {
     );
   }
   onSubmit(form) {
-    this.order.number = (this.orderNumber+1).toString();
+    this.order.number = (this.orderNumber + 1).toString();
     this.order.payment = this.pay;
     this.order.problem = "";
     this.order.products = this.carrito;
@@ -136,7 +174,7 @@ export class CarritoComponent implements OnInit {
         console.log(error);
       }
     );
-    
+
   }
   removeProduct(product) {
     const index = this.carrito.indexOf(product, 0);

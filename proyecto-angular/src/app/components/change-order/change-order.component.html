@@ -7,7 +7,7 @@
             <th>Estado</th>
         </tr>
         <tr *ngFor="let orderx of orders; let i = index">
-            <td style="text-align: center;">{{orderx.number}}</td>
+            <td style="text-align: center;"><a [routerLink]="['/cart', orderx._id]" [routerLinkActive]="['actived']">{{orderx.number}}</a></td>
             <td style="text-align: center;">{{orderx.total}}</td>
             <td>
                 <select class="select-css bigSelect" value="{{orders[i].state}}"

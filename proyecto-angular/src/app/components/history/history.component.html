@@ -8,7 +8,7 @@
             <th>Reportar problema</th>
         </tr>
         <tr *ngFor="let orderx of orders; let i = index">
-            <td>{{orderx.number}}</td>
+            <td><a [routerLink]="['/cart', orderx._id]" [routerLinkActive]="['actived']">{{orderx.number}}</a></td>
             <td>{{orderx.total}}</td>
             <td>{{orderx.date}}</td>
             <td><button type="button" class="problemButton" (click)="openDialog(orders[i])">!</button></td>
