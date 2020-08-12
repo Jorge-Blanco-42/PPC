@@ -26,7 +26,6 @@ export class EditProductComponent implements OnInit {
   constructor(
     private _productService: ProductService,
     private _uploadService: UploadService,
-    private _router: Router,
     private _route: ActivatedRoute
   ) {
     this.title = 'Editar producto';

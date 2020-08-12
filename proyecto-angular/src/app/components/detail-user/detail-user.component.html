@@ -2,7 +2,7 @@
     <form #createProductForm="ngForm" (ngSubmit)="onSubmit(createProductForm)">
         <div class="row">
             <div class="column">
-                <h2 class="paddingTop">Editar usuario</h2>
+                <h2 class="paddingTop">{{title}}</h2>
             </div>
             <div class="column">
             </div>
@@ -23,8 +23,7 @@
                 <br/>
                 <p>
                     <label for="password">Contraseña</label>
-                    <input type="password" name="password" #password="ngModel" [(ngModel)]="user.password" required>
-                    <span class="form_error" *ngIf="password.touched && !password.valid"><strong>Campo obligatorio</strong></span>
+                    <input id="password" type="password" name="password">
                 </p>
                 <br/>
                 <p>
@@ -49,7 +48,7 @@
    
         <!--CAmbiar la ruta por la del menu-->
         <div class="row">
-            <button class="cancelButton" [routerLink]="['/dashTest']" >CANCELAR</button>
+            <button class="cancelButton" [routerLink]="['/productos']" >CANCELAR</button>
             <input class="submitbtn" type="submit" value="Guardar" [disabled]="!createProductForm.form.valid">
         </div>
         
