@@ -8,7 +8,6 @@
       <li class = "company">{{restaurant.name}}</li>
       <li><a [routerLink]="['/contacto']" [routerLinkActive]="['actived']">Contacto</a></li>
       <li id = "menubtn"><a [routerLink]="['/productos']" [routerLinkActive]="['actived']">Menú</a></li>
-      <li id = "crearProductobtn"><a [routerLink]="['/crear-producto']" [routerLinkActive]="['actived']">Crear Producto</a></li>
       <li *ngIf="authen === true"><a id="iconoG" (click)=openDialog() [routerLinkActive]="['actived']"><img src="../assets/img/gears.png"></a></li>
       <li><a id="iconoC" [routerLink]="['/cart']" [routerLinkActive]="['actived']" ><img src="../assets/img/carrito.png" ></a></li>
       <li *ngIf="authen === true"><a id="iconoU" [routerLink]="['/detail-user']" [routerLinkActive]="['actived']" ><img src="../assets/img/usuario.png" ></a></li>
